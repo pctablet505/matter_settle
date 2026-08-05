@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
+  <title>Page Not Found — Matter Settle</title>
+  <meta name="description" content="This page doesn't exist. Head back to the Matter Settle homepage." />
+  <meta name="robots" content="noindex" />
+  <link rel="icon" href="/assets/favicon.svg" type="image/svg+xml" />
+  <script>
+    (function () {
+      try {
+        var t = localStorage.getItem('ms-theme');
+        if (!t) t = window.matchMedia('(prefers-color-scheme: light)').matches ? 'light' : 'dark';
+        document.documentElement.dataset.theme = t;
+      } catch (e) { document.documentElement.dataset.theme = 'dark'; }
+    })();
+  </script>
+  <link rel="preload" href="/assets/fonts/inter-var.woff2" as="font" type="font/woff2" crossorigin />
+  <link rel="stylesheet" href="/css/style.css" />
+</head>
+<body>
+
+<a class="skip-link" href="#main">Skip to content</a>
+
+<nav id="navbar">
+  <div class="nav-inner">
+    <a href="/" class="nav-logo">
+      <svg class="logo-mark" viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+        <rect x="2.5" y="2.5" width="19" height="19" rx="5.5" />
+        <path d="M6.5 17h11" />
+        <path d="M8.5 17v-4.5l2.6 2.4 2.2-6 2.2 8.1" />
+      </svg>
+      Matter Settle
+    </a>
+  </div>
+</nav>
+
+<div class="error-page" id="main">
+  <div>
+    <div class="error-code">404</div>
+    <h1>Page Not Found</h1>
+    <p>That page doesn't exist — it may have moved, or the link was mistyped.</p>
+    <a href="/" class="btn-primary">Back to Homepage</a>
+  </div>
+</div>
+
+<script src="/js/main.js"></script>
+</body>
+</html>

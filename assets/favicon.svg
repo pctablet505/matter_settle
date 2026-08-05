@@ -1,0 +1,10 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="64" height="64">
+  <!-- Matter Settle mark: a signal settling onto a baseline.
+       Same geometry as the inline <svg class="logo-mark"> in the HTML pages. -->
+  <rect width="24" height="24" rx="6" fill="#02060f"/>
+  <g fill="none" stroke="#a78bfa" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+    <rect x="3.2" y="3.2" width="17.6" height="17.6" rx="5" opacity="0.55"/>
+    <path d="M6.5 17h11"/>
+    <path d="M8.5 17v-4.5l2.6 2.4 2.2-6 2.2 8.1"/>
+  </g>
+</svg>

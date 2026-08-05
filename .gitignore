@@ -1,0 +1,11 @@
+# Internal planning/research notes. These are NOT part of the website and must
+# never be committed: anything in this repo is served publicly at
+# mattersettle.com once GitHub Pages is live.
+PLAN/
+
+# OS / editor noise
+.DS_Store
+Thumbs.db
+*.swp
+.idea/
+.vscode/

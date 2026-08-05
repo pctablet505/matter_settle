@@ -1,0 +1,443 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
+  <title>Matter Settle — End-to-End AI Engineering</title>
+  <meta name="description" content="A small studio of engineers who design, build, and run production AI systems end to end. RLAlphaLabs, an independent project published on this domain, is live and public — open it and check." />
+
+  <!-- Link-preview cards (Slack / LinkedIn / iMessage). og:image must be an
+       absolute URL and must exist at /assets/og-cover.png — regenerate it with
+       PLAN/og-cover-source.html if you change the wording. -->
+  <meta property="og:site_name" content="Matter Settle" />
+  <meta property="og:title" content="Matter Settle — End-to-End AI Engineering" />
+  <meta property="og:description" content="We design, build, and run production AI systems. RLAlphaLabs, an independent project published on this domain, is live and public — open it and check." />
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://mattersettle.com/" />
+  <meta property="og:image" content="https://mattersettle.com/assets/og-cover.png" />
+  <meta property="og:image:width" content="1200" />
+  <meta property="og:image:height" content="630" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="Matter Settle — End-to-End AI Engineering" />
+  <meta name="twitter:description" content="We design, build, and run production AI systems. RLAlphaLabs, an independent project published on this domain, is live and public — open it and check." />
+  <meta name="twitter:image" content="https://mattersettle.com/assets/og-cover.png" />
+  <link rel="canonical" href="https://mattersettle.com/" />
+  <link rel="icon" href="/assets/favicon.svg" type="image/svg+xml" />
+
+  <script>
+    /* No-FOUC theme bootstrap: apply saved/preferred theme before first paint */
+    (function () {
+      try {
+        var t = localStorage.getItem('ms-theme');
+        if (!t) t = window.matchMedia('(prefers-color-scheme: light)').matches ? 'light' : 'dark';
+        document.documentElement.dataset.theme = t;
+      } catch (e) { document.documentElement.dataset.theme = 'dark'; }
+    })();
+  </script>
+  <!-- Fonts are self-hosted in /assets/fonts (see css/style.css @font-face).
+       Nothing on this site loads from a third-party server. -->
+  <link rel="preload" href="/assets/fonts/inter-var.woff2" as="font" type="font/woff2" crossorigin />
+  <link rel="stylesheet" href="css/style.css" />
+  <noscript><style>.reveal{opacity:1!important;transform:none!important}</style></noscript>
+
+  <!-- Minimal structured data. Only facts stated on the page itself. -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Organization",
+    "name": "Matter Settle",
+    "url": "https://mattersettle.com/",
+    "description": "A small studio of engineers building end-to-end AI systems.",
+    "logo": "https://mattersettle.com/assets/favicon.svg"
+  }
+  </script>
+</head>
+<body>
+
+<a class="skip-link" href="#hero">Skip to content</a>
+<div id="scrollProgress"></div>
+
+<!-- ════════════════════ NAV ════════════════════ -->
+<nav id="navbar">
+  <div class="nav-inner">
+    <a href="#hero" class="nav-logo">
+      <!-- Logo mark: a signal settling onto a baseline. Same SVG is used in the
+           footer and in /assets/favicon.svg — change all three together. -->
+      <svg class="logo-mark" viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+        <rect x="2.5" y="2.5" width="19" height="19" rx="5.5" />
+        <path d="M6.5 17h11" />
+        <path d="M8.5 17v-4.5l2.6 2.4 2.2-6 2.2 8.1" />
+      </svg>
+      Matter Settle
+    </a>
+    <ul class="nav-links">
+      <li><a href="#work">Our Work</a></li>
+      <li><a href="#services">What We Build</a></li>
+      <li><a href="#process">How We Work</a></li>
+      <li><a href="#contact" class="nav-cta">Get in Touch</a></li>
+    </ul>
+    <button class="theme-toggle" id="themeToggle" aria-label="Toggle color theme" title="Toggle light / dark theme">
+      <svg class="icon-sun" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><circle cx="12" cy="12" r="4"/><path d="M12 2v2m0 16v2M4.9 4.9l1.4 1.4m11.4 11.4 1.4 1.4M2 12h2m16 0h2M4.9 19.1l1.4-1.4M17.7 6.3l1.4-1.4"/></svg>
+      <svg class="icon-moon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 12.8A9 9 0 1 1 11.2 3a7 7 0 0 0 9.8 9.8z"/></svg>
+    </button>
+    <button class="hamburger" id="hamburger" aria-label="Menu" aria-expanded="false" aria-controls="mobileMenu">
+      <span></span><span></span><span></span>
+    </button>
+  </div>
+  <div class="mobile-menu" id="mobileMenu">
+    <a href="#work">Our Work</a>
+    <a href="#services">What We Build</a>
+    <a href="#process">How We Work</a>
+    <a href="#contact" class="nav-cta">Get in Touch</a>
+  </div>
+</nav>
+
+<!-- ════════════════════ HERO ════════════════════ -->
+<!-- The first screen carries a claim AND the evidence for it side by side:
+     the panel on the right is real, published data from the live RLAlphaLabs
+     site, so a skimming stranger sees proof without scrolling or reading prose. -->
+<section id="hero">
+  <div class="container hero-grid">
+    <div class="hero-copy">
+      <div class="hero-pills reveal">
+        <span class="pill">End-to-end AI engineering</span>
+      </div>
+      <h1 class="hero-h1 reveal">
+        From notebook<br />to production system.
+      </h1>
+      <p class="hero-p reveal">
+        A small studio of engineers. We design, build, and run the whole thing —
+        data pipeline, model, application, deployment, monitoring.
+      </p>
+      <p class="hero-icp reveal">
+        <b>Who this is for:</b> teams that need an ML system running in production —
+        and someone accountable for keeping it running.
+      </p>
+      <div class="hero-ctas reveal">
+        <a href="#contact" class="btn-primary">Start a Conversation</a>
+        <a href="#work" class="btn-ghost">See the live system →</a>
+      </div>
+    </div>
+
+    <!-- ── Fold-level evidence panel ──────────────────────────────────────
+         Every line here is published on https://rlalphalabs.mattersettle.com
+         (verified 2026-08-05). If that site changes, update or remove the
+         line here — never keep a number the reader can't find at the source. -->
+    <aside class="proof-panel reveal" aria-label="Live proof: RLAlphaLabs">
+      <div class="pp-head">
+        <span class="pp-live" aria-hidden="true"></span>
+        LIVE · rlalphalabs.mattersettle.com
+      </div>
+      <div class="pp-title">RLAlphaLabs — an independent project on this domain</div>
+      <ul class="pp-list">
+        <li><span class="pp-k">Tests</span><span class="pp-v"><b>6,300+</b> gate every merge</span></li>
+        <li><span class="pp-k">Data</span><span class="pp-v"><b>700+</b> stocks · 8 granularities · 5,000+ files</span></li>
+        <li><span class="pp-k">Costs</span><span class="pp-v">STT, exchange fees, SEBI charges, GST, stamp duty, slippage — all modelled</span></li>
+        <li><span class="pp-k">Validation</span><span class="pp-v">Walk-forward, on held-out data</span></li>
+      </ul>
+      <a class="pp-link" href="https://rlalphalabs.mattersettle.com" target="_blank" rel="noopener">Open it and check →</a>
+      <p class="pp-note">Research-stage. No live capital deployed.</p>
+    </aside>
+  </div>
+</section>
+
+<!-- ════════════════════ PROOF: RLALPHALABS ════════════════════ -->
+<section id="work" data-dot="Work">
+  <div class="container">
+    <div class="sec-label reveal">Our Work</div>
+    <h2 class="sec-h2 reveal">One project.<br /><span class="grad">Public, live, checkable.</span></h2>
+    <p class="sec-p reveal">
+      RLAlphaLabs is an independent reinforcement-learning research platform for
+      Indian equity markets, published on this domain by its own author. We point at it because it is the engineering
+      standard we work to, and because you can inspect all of it right now
+      instead of taking our word for anything.
+    </p>
+
+    <div class="work-card reveal">
+      <div class="work-card-body">
+        <h3>RLAlphaLabs</h3>
+        <p>Reinforcement learning for Indian equity markets. Research-stage, and built like something that has to survive contact with real money.</p>
+        <div class="work-stats">
+          <div class="wstat">
+            <span class="wstat-val">6,300+</span>
+            <span class="wstat-lbl">Tests Gating Every Merge</span>
+          </div>
+          <div class="wstat">
+            <span class="wstat-val">700+</span>
+            <span class="wstat-lbl">Stocks Tracked</span>
+          </div>
+          <div class="wstat">
+            <span class="wstat-val">8</span>
+            <span class="wstat-lbl">Time Granularities</span>
+          </div>
+        </div>
+        <!-- These figures and labels are quoted from the live RLAlphaLabs site
+             (verified 2026-08-05). Re-check them there before each deploy. -->
+        <ul class="rigor-list">
+          <li><b>Full Indian brokerage cost model</b> — STT, exchange fees, SEBI charges, GST, stamp duty, slippage and market impact, all simulated.</li>
+          <li><b>Walk-forward validation</b> — the agent has to generalise across time windows, and results are reported on held-out data.</li>
+          <li><b>Fails loud, never silent</b> — behaviour-sensitive paths are pinned by parity tests so nothing drifts quietly into a release.</li>
+        </ul>
+        <div class="work-links">
+          <a href="https://rlalphalabs.mattersettle.com" class="btn-primary" target="_blank" rel="noopener">Visit RLAlphaLabs →</a>
+          <a href="work/" class="btn-ghost">Read the detail →</a>
+        </div>
+        <p class="work-caption">Research-stage. No live capital deployed. The live site is always the source of truth for these numbers.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ════════════════════ WHAT WE BUILD ════════════════════ -->
+<!-- Rule for editing this section: what we say we can DO may be stated broadly.
+     What we say is PROVEN may not. A card gets a `.feat-proof` link only if a
+     stranger can open that link and see the thing; otherwise it gets the
+     `.feat-noproof` line, unchanged, saying no public artifact exists yet.
+     Never move a card from one to the other without adding the artifact. -->
+<section id="services" data-dot="Services">
+  <div class="container">
+    <div class="sec-label reveal">What We Build</div>
+    <h2 class="sec-h2 reveal">Five things we build.<br /><span class="grad">Three you can go and inspect.</span></h2>
+    <p class="sec-p reveal">We do all five and we'll go deep on any of them. Evidence is a separate question from capability, so we keep them separate: where there's a public artifact you can open, the card links to it — where there isn't, the card says so instead of implying one exists.</p>
+
+    <div class="feat-grid">
+
+      <div class="feat-card reveal" data-color="blue">
+        <div class="feat-icon blue-bg">
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5"/></svg>
+        </div>
+        <h3>Decision systems, not just models</h3>
+        <p>Reinforcement learning and simulation for problems where a wrong action costs real money — reward design, risk constraints, honest evaluation.</p>
+        <div class="feat-meta">
+          <span class="mono-tag">Reinforcement learning</span>
+          <span class="mono-tag">Backtesting &amp; validation</span>
+        </div>
+        <a class="feat-proof" href="https://rlalphalabs.mattersettle.com" target="_blank" rel="noopener">Proof: the RLAlphaLabs agent &amp; reward design →</a>
+      </div>
+
+      <div class="feat-card reveal" data-color="green">
+        <div class="feat-icon green-bg">
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><ellipse cx="12" cy="5" rx="9" ry="3"/><path d="M21 12c0 1.66-4 3-9 3s-9-1.34-9-3"/><path d="M3 5v14c0 1.66 4 3 9 3s9-1.34 9-3V5"/></svg>
+        </div>
+        <h3>Your pipeline breaks every third night</h3>
+        <p>Ingestion, validation and storage built to run unattended: checkpointed parallel downloads, quality gates, multi-source fallback.</p>
+        <div class="feat-meta">
+          <span class="mono-tag">Pipeline engineering</span>
+          <span class="mono-tag">Data quality</span>
+        </div>
+        <a class="feat-proof" href="https://rlalphalabs.mattersettle.com" target="_blank" rel="noopener">Proof: 700+ stocks, 5,000+ files, certified-data-only →</a>
+      </div>
+
+      <div class="feat-card reveal" data-color="amber">
+        <div class="feat-icon amber-bg">
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="2" y="3" width="20" height="14" rx="2"/><path d="M8 21h8M12 17v4"/></svg>
+        </div>
+        <h3>The model works, the system doesn't exist yet</h3>
+        <p>The application around the model: services, storage, deployment, dashboards, and the test discipline that keeps it releasable.</p>
+        <div class="feat-meta">
+          <span class="mono-tag">Full-stack</span>
+          <span class="mono-tag">Deployment &amp; monitoring</span>
+        </div>
+        <a class="feat-proof" href="work/">Proof: the RLAlphaLabs stack, stage by stage →</a>
+      </div>
+
+      <div class="feat-card reveal" data-color="cyan">
+        <div class="feat-icon cyan-bg">
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/><path d="M8 9h8M8 13h5"/></svg>
+        </div>
+        <h3>LLM features that do one job well</h3>
+        <p>Retrieval, tool use and agent workflows built around one specific task, with an evaluation set so you can tell whether a change made it better or worse.</p>
+        <div class="feat-meta">
+          <span class="mono-tag">Retrieval</span>
+          <span class="mono-tag">Tool use &amp; agents</span>
+        </div>
+        <p class="feat-noproof">No public artifact yet — ask and we'll walk you through code.</p>
+      </div>
+
+      <!-- TODO(owner): decide whether to keep this card at all. It is worded
+           deliberately generically — no "computer vision", no "quantization /
+           export". A very narrow specialty plus a very small team makes
+           individuals identifiable, which is the one thing this site must
+           never do. Do not sharpen this copy. -->
+      <div class="feat-card reveal" data-color="green">
+        <div class="feat-icon green-bg">
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="4" y="4" width="16" height="16" rx="2"/><rect x="9" y="9" width="6" height="6"/><path d="M9 2v2M15 2v2M9 20v2M15 20v2M2 9h2M2 15h2M20 9h2M20 15h2"/></svg>
+        </div>
+        <h3>Models that have to run where the data is</h3>
+        <p>Making a model fit and run on constrained hardware instead of shipping everything to a GPU server — smaller models, measured latency and memory budgets, honest accuracy trade-offs.</p>
+        <div class="feat-meta">
+          <span class="mono-tag">Constrained hardware</span>
+          <span class="mono-tag">Latency &amp; memory budgets</span>
+        </div>
+        <p class="feat-noproof">No public artifact yet — ask and we'll walk you through code.</p>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- ════════════════════ HOW WE WORK ════════════════════ -->
+<!-- Deliberately short. Promises are cheap and every agency makes the same
+     ones, so this section is a scannable strip, not paragraphs. -->
+<section id="process" data-dot="Process">
+  <div class="container">
+    <div class="sec-label reveal">How We Work</div>
+    <h2 class="sec-h2 reveal">Four steps.<br /><span class="grad">Judge the process.</span></h2>
+    <p class="sec-p reveal">We're a new studio, so we have no decade of client history to wave at. Here is exactly how an engagement runs instead.</p>
+
+    <div class="step-strip reveal">
+      <div class="step">
+        <span class="step-n">01</span>
+        <b>Scope honestly</b>
+        <span>If AI is the wrong tool, we say so.</span>
+      </div>
+      <div class="step">
+        <span class="step-n">02</span>
+        <b>Small paid pilot</b>
+        <span>Fixed scope, fixed price, working software early.</span>
+      </div>
+      <div class="step">
+        <span class="step-n">03</span>
+        <b>Build in the open</b>
+        <span>Weekly progress you can see and run.</span>
+      </div>
+      <div class="step">
+        <span class="step-n">04</span>
+        <b>Ship, then support</b>
+        <span>Monitoring, retraining, on-call — the boring half.</span>
+      </div>
+    </div>
+
+    <div class="how-cols">
+      <div class="how-col reveal">
+        <h3>What an engagement looks like</h3>
+        <ul class="tight-list">
+          <li><b>Pilot</b> — fixed price, fixed scope, one clear deliverable.</li>
+          <li><b>Ongoing build</b> — project fee or monthly retainer.</li>
+          <li><b>Written scope first</b> — you know the cost before you commit.</li>
+        </ul>
+        <!-- TODO(owner): confirm "fixed price, fixed scope" for pilots, and add a
+             typical pilot duration here if you're willing to commit to one. -->
+        <p class="fine">No price list: scope varies too much for a number to mean anything before we've talked.</p>
+      </div>
+      <div class="how-col reveal">
+        <h3>Small on purpose</h3>
+        <ul class="tight-list">
+          <li><b>Direct access</b> — you talk to the engineer doing the work.</li>
+          <li><b>One accountable team</b> — model, backend, deployment, monitoring.</li>
+          <li><b>Decisions in a call</b> — not a committee.</li>
+        </ul>
+        <!-- Deliberately generic. Do NOT add a company name here under any
+             circumstance: a named employer plus a small team identifies people. -->
+        <p class="fine">Engineers who have worked on machine learning in demanding production environments. New as a studio, not new to shipping ML.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ════════════════════ CONTACT ════════════════════ -->
+<section id="contact" data-dot="Contact">
+  <div class="container">
+    <div class="contact-wrap">
+      <div class="contact-left reveal">
+        <div class="sec-label">Get In Touch</div>
+        <h2 class="sec-h2">Start with a<br /><span class="grad">conversation.</span></h2>
+        <p>Tell us what you're building. A sentence or two is plenty — we'll reply directly, and we'll tell you honestly if it's outside what we do.</p>
+        <!-- TODO(owner): confirm the city, and add a legal entity name here once
+             one exists. Timezone claim must match reality — it is the first
+             question most procurement conversations ask. -->
+        <ul class="contact-facts">
+          <li><b>Where we are:</b> India · IST (UTC+5:30)</li>
+          <li><b>Overlap:</b> full European working day, US mornings</li>
+          <li><b>What happens next:</b> a short call, no pitch deck</li>
+        </ul>
+      </div>
+      <div class="contact-right reveal">
+        <form class="cform" id="contactForm">
+          <div class="cform-group">
+            <label for="name">Name</label>
+            <input type="text" id="name" name="name" placeholder="Your name" required />
+          </div>
+          <div class="cform-group">
+            <label for="email">Email</label>
+            <input type="email" id="email" name="email" placeholder="you@company.com" required />
+          </div>
+          <div class="cform-group">
+            <label for="message">What are you building?</label>
+            <textarea id="message" name="message" rows="4" placeholder="A sentence or two is plenty."></textarea>
+          </div>
+          <button type="submit" class="btn-primary full">Open in my email app</button>
+          <p class="cform-promise">This opens your own email app with the message ready to send.</p>
+        </form>
+
+        <!-- Fallback panel: shown after submit and stays visible alongside the
+             form, because a mailto: link silently does nothing on webmail and
+             on locked-down corporate machines. The text is copyable so a failed
+             hand-off is always recoverable. -->
+        <div class="cform-fallback" id="formFallback" role="status" aria-live="polite" hidden>
+          <b>If your email app didn't open</b>
+          <p>Copy the message below and send it to <a href="mailto:settleyourmatter@gmail.com">settleyourmatter@gmail.com</a>.</p>
+          <textarea id="fallbackText" rows="6" readonly aria-label="Your message, ready to copy"></textarea>
+          <button type="button" class="btn-ghost" id="copyBtn">Copy message</button>
+        </div>
+
+        <p class="contact-fallback">
+          Prefer plain email? <a href="mailto:settleyourmatter@gmail.com">settleyourmatter@gmail.com</a> — same inbox either way.
+          <!-- The same address appears twice on this page, once in
+               privacy/index.html and once in js/main.js. Change all four together. -->
+        </p>
+        <p class="contact-privacy">
+          The form never sends anything by itself — it hands the text to your email app. Nothing is stored on any Matter Settle server. See our <a href="privacy/">privacy notice</a>.
+        </p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ════════════════════ FOOTER ════════════════════ -->
+<footer>
+  <div class="container">
+    <div class="footer-top">
+      <div class="footer-brand">
+        <a href="#hero" class="nav-logo">
+          <svg class="logo-mark" viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+            <rect x="2.5" y="2.5" width="19" height="19" rx="5.5" />
+            <path d="M6.5 17h11" />
+            <path d="M8.5 17v-4.5l2.6 2.4 2.2-6 2.2 8.1" />
+          </svg>
+          Matter Settle
+        </a>
+        <p>A small studio building end-to-end AI systems.<br />
+        India · IST (UTC+5:30)</p>
+      </div>
+      <div class="footer-nav">
+        <div class="fnav-col">
+          <b>Studio</b>
+          <a href="#hero">Home</a>
+          <a href="#work">Our Work</a>
+          <a href="#services">What We Build</a>
+          <a href="#process">How We Work</a>
+        </div>
+        <div class="fnav-col">
+          <b>Proof</b>
+          <a href="https://rlalphalabs.mattersettle.com" target="_blank" rel="noopener">RLAlphaLabs ↗</a>
+          <a href="work/">Work Page</a>
+        </div>
+        <div class="fnav-col">
+          <b>Legal</b>
+          <a href="privacy/">Privacy</a>
+        </div>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p>© 2026 Matter Settle. A small studio building end-to-end AI systems.</p>
+      <p class="footer-disc">RLAlphaLabs is an independent project published on this domain by its own author. We're a new studio and we don't claim client work we haven't done.</p>
+    </div>
+  </div>
+</footer>
+
+<button id="backTop" aria-label="Back to top" title="Back to top">↑</button>
+
+<script src="js/main.js"></script>
+</body>
+</html>
