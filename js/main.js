@@ -1,11 +1,10 @@
 /* ═══════════════════════════════════════════════════════════════
    Matter Settle — Main JS
-   Sibling script to RLAlphaLabs' js/main.js — same patterns
-   (no-FOUC theme toggle, scroll chrome, reveal, mobile menu/CTA),
-   trimmed of everything that needs live data (charts, ticker,
-   counters) since this is a 100% static site with no numbers of
-   its own to animate. Every function guards on its target element
-   existing, so it's safe to include unchanged on every page.
+   Plain, dependency-free behaviour: no-FOUC theme toggle, scroll
+   chrome, reveal-on-scroll, mobile menu/CTA and the contact form.
+   Nothing here needs live data — this is a fully static site with no
+   numbers to animate. Every function guards on its target element
+   existing, so the file is safe to include unchanged on every page.
    ═══════════════════════════════════════════════════════════════ */
 'use strict';
 
@@ -238,8 +237,8 @@ function initArticleEnhancements() {
    needed for that — keep the mailto: link as a visible fallback.
    ═══════════════════════════════════════════════════════════════ */
 
-/* TODO(owner): mailbox does not exist yet — set up Cloudflare Email Routing + MX before launch, or swap for a working address */
-/* Must stay identical to the address printed in index.html and privacy/index.html. */
+/* The studio's real inbox. Must stay identical to the address printed in
+   index.html (twice) and privacy/index.html — change all four together. */
 const CONTACT_EMAIL = 'settleyourmatter@gmail.com';
 
 function initContactForm() {

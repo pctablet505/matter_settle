@@ -1,8 +1,8 @@
 /* ═══════════════════════════════════════════════════════════════
    Matter Settle — Stylesheet (dual-theme)
-   Sibling stylesheet to RLAlphaLabs' css/style.css — same tokens,
-   same component patterns, distinct accent hue so the two sites
-   feel related but not identical in a browser tab strip.
+   One file, token-driven, no preprocessor and no build step.
+   Colours are defined once in the token blocks below and referenced
+   everywhere via var(--token).
 
    ── HOW TO MODIFY ────────────────────────────────────────────────
    · ALL colors live in the token blocks below (:root = dark,
@@ -368,7 +368,6 @@ section { padding: 110px 0; position: relative; }
   border: 1px solid var(--border); border-radius: 6px;
   padding: 4px 9px; display: inline-block;
 }
-.mono-real { color: var(--green); border-color: var(--green-d); background: var(--green-d); }
 
 /* ─── 6. HERO ───────────────────────────────────────────────────── */
 /* Two columns: the claim on the left, the evidence for it on the right.
@@ -413,11 +412,6 @@ section { padding: 110px 0; position: relative; }
   text-transform: uppercase; color: var(--t3);
   display: flex; align-items: center; gap: 8px; margin-bottom: 14px;
 }
-.pp-live {
-  width: 8px; height: 8px; border-radius: 50%;
-  background: var(--green); box-shadow: 0 0 0 3px var(--green-d);
-  flex-shrink: 0;
-}
 .pp-title { font-family: var(--head); font-weight: 600; font-size: 17px; color: var(--t0); margin-bottom: 16px; }
 .pp-list { list-style: none; display: flex; flex-direction: column; gap: 11px; margin-bottom: 18px; }
 .pp-list li { display: grid; grid-template-columns: 88px 1fr; gap: 10px; align-items: baseline; }
@@ -441,10 +435,6 @@ section { padding: 110px 0; position: relative; }
 .work-card:hover { border-color: var(--cyan); box-shadow: var(--shadow); }
 .work-card-body h3 { font-family: var(--head); font-size: 24px; color: var(--t0); margin-bottom: 10px; }
 .work-card-body p { font-size: 15px; color: var(--t2); margin-bottom: 20px; max-width: 540px; }
-.work-stats { display: flex; flex-wrap: wrap; gap: 22px; margin-bottom: 22px; }
-.wstat { display: flex; flex-direction: column; gap: 2px; }
-.wstat-val { font-family: var(--mono); font-size: 22px; font-weight: 600; color: var(--cyan); }
-.wstat-lbl { font-size: 11px; color: var(--t3); text-transform: uppercase; letter-spacing: 0.5px; }
 .rigor-list { list-style: none; margin: 0 0 24px; display: flex; flex-direction: column; gap: 10px; max-width: 640px; }
 .rigor-list li { font-size: 14px; color: var(--t2); padding-left: 20px; position: relative; line-height: 1.55; }
 .rigor-list li::before { content: '→'; position: absolute; left: 0; color: var(--cyan); }
@@ -486,24 +476,6 @@ section { padding: 110px 0; position: relative; }
 .feat-card h3 { font-family: var(--head); color: var(--t0); font-size: 19px; margin-bottom: 10px; }
 .feat-card p { font-size: 14.5px; color: var(--t2); margin-bottom: 18px; }
 .feat-meta { display: flex; gap: 8px; flex-wrap: wrap; }
-/* Every card carries exactly one of these two lines in the same slot:
-   .feat-proof  — a link a stranger can open and check.
-   .feat-noproof — plain text saying no public artifact exists yet.
-   A card only moves from the second to the first when the artifact is real. */
-.feat-proof {
-  display: block; margin-top: 16px; padding-top: 14px;
-  border-top: 1px solid var(--border);
-  font-size: 13px; font-weight: 500;
-}
-.feat-proof:hover { text-decoration: underline; }
-
-/* Dashed rather than solid, and muted rather than accent-coloured, so it never
-   reads as a link. Do not restyle this to look like .feat-proof. */
-.feat-card .feat-noproof {
-  margin-top: 16px; padding-top: 14px; margin-bottom: 0;
-  border-top: 1px dashed var(--border-md);
-  font-size: 13px; color: var(--t3);
-}
 
 /* ─── 9-11. HOW WE WORK — step strip + two short columns ────────────
    This section used to be three long sections of prose. It is short on
@@ -628,14 +600,6 @@ footer { border-top: 1px solid var(--border); background: var(--bg1); padding: 6
 }
 .callout.warn { border-left-color: var(--amber); background: var(--amber-d); }
 .callout.info { border-left-color: var(--blue); background: var(--blue-d); }
-
-.exp-metrics { display: grid; grid-template-columns: repeat(auto-fit, minmax(150px, 1fr)); gap: 12px; margin: 22px 0; }
-.exp-metric {
-  background: var(--surface); border: 1px solid var(--border); border-radius: var(--r);
-  padding: 16px; text-align: center;
-}
-.exp-metric .val { font-family: var(--mono); font-size: 21px; font-weight: 600; color: var(--cyan); }
-.exp-metric .lbl { font-size: 11px; color: var(--t3); text-transform: uppercase; letter-spacing: 0.5px; margin-top: 3px; }
 
 .cta-bar {
   display: flex; justify-content: space-between; align-items: center; gap: 20px; flex-wrap: wrap;
@@ -770,5 +734,4 @@ footer { border-top: 1px solid var(--border); background: var(--bg1); padding: 6
   .hero-h1 { letter-spacing: -0.8px; }
   .cta-bar { flex-direction: column; align-items: stretch; text-align: center; }
   .cta-bar .btn-primary { width: 100%; }
-  .work-stats { gap: 16px; }
 }

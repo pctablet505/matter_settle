@@ -10,21 +10,20 @@ This guide assumes no prior web-dev experience.
 
 ## ⚠ Launch checklist — do these before the domain goes live
 
-1. **Create the mailbox.** `settleyourmatter@gmail.com` is printed on the site and
-   is the target of the contact form, but `mattersettle.com` currently has no
-   MX record, so mail sent there goes nowhere. Set up Cloudflare Email Routing
-   (or any mailbox) and send yourself a test message. Until that works, every
-   inquiry the site generates is lost.
+1. **Test the contact route once.** The site's only contact address is
+   `settleyourmatter@gmail.com` — a real inbox, so no MX records or mail
+   hosting are needed for `mattersettle.com`. Open the site, submit the form,
+   and confirm the message arrives, so you know the one path a stranger uses
+   actually works.
 2. **Point the apex at GitHub Pages** (see "DNS records" below). Until then the
    site is unreachable and link previews can't load the preview image.
-3. **Reconcile the RLAlphaLabs site with this one.** Every "see our work" link
-   goes to `rlalphalabs.mattersettle.com`, which is currently written as an
-   independent, first-person research project with its own personal contact
-   details. Decide before launch whether that site should acknowledge the
-   umbrella and route contact through a studio address, and update its About
-   section accordingly. **Owner decision — nothing in this repo can change that
-   site.** Note that this file is itself published (see "Deploying"), so keep
-   the details of that decision out of it.
+3. **Keep the RLAlphaLabs line exactly where it is.** `rlalphalabs.mattersettle.com`
+   is a separate personal project, not a Matter Settle product and not client
+   work. This site references it only as an example of an engineering standard,
+   and says so in plain words on the homepage, the How We Build page and every
+   footer. Do not let anyone "tighten" that into ownership language — claiming
+   another party's project is the single fastest way to lose a careful reader,
+   and it is the one thing every reviewer of this site flagged.
 4. **Confirm the location line.** The footer and contact section say
    "India · IST (UTC+5:30)". Change it if that's wrong, and add a city and a
    legal entity name when you have one.
@@ -38,7 +37,7 @@ This guide assumes no prior web-dev experience.
 ```
 mattersettle-site/
 ├── index.html                       the homepage (hero, proof, services, process, contact)
-├── work/index.html                  the RLAlphaLabs deep-dive       → mattersettle.com/work/
+├── work/index.html                  the "How We Build" page          → mattersettle.com/work/
 ├── privacy/index.html               the privacy notice              → mattersettle.com/privacy/
 ├── 404.html                         broken links land here (GitHub Pages uses it automatically)
 ├── css/style.css                    all styling (colors, fonts, spacing) — one file
@@ -98,11 +97,12 @@ how to maintain).
 
 ## The two rules this site is built on
 
-1. **Never publish a number or claim you can't point at.** Every figure on the
-   site comes from the live RLAlphaLabs page and is meant to be verifiable by
-   clicking through. If RLAlphaLabs changes, update or delete the figure here
-   the same day. A number a reader can't find at the source damages the ones
-   that are true.
+1. **Never publish a number or claim you can't point at.** The site currently
+   quotes no metrics at all — deliberately. The only numbers available belonged
+   to a project this studio does not own, and borrowed figures on a vendor site
+   read as borrowed credibility. When Matter Settle has its own result, publish
+   it with a link a stranger can open, and delete it the day it stops being
+   true.
 2. **No client work, testimonials, logos, or headcounts until they're real.**
    The site says plainly that the studio is new. That honesty is the entire
    pitch — replacing it with generic agency claims makes the site worse, not
@@ -165,8 +165,8 @@ line, and don't force-add files from it.
 - Create the GitHub repo and push this folder to it (`git init`, `git remote
   add origin …`, `git push -u origin main`).
 - GitHub → repo → **Settings → Pages → Source → "Deploy from a branch"**,
-  branch `main`, folder `/ (root)`. This is the same setup the RLAlphaLabs
-  site uses.
+  branch `main`, folder `/ (root)`. This is the same setup the sibling
+  `rlalphalabs` subdomain uses.
 
 ### DNS records (Cloudflare, for `mattersettle.com`)
 
@@ -188,9 +188,10 @@ same setup one level up. After the records exist, GitHub → Settings → Pages 
 Custom domain should show `mattersettle.com` verified, and "Enforce HTTPS"
 should be ticked.
 
-Email is separate: adding the site's DNS records does **not** create
-`settleyourmatter@gmail.com`. Set up Cloudflare Email Routing (or another mail
-provider) for that, which adds its own MX records.
+Email needs nothing here: the site's contact address is an ordinary Gmail
+inbox, so `mattersettle.com` needs no MX records and no mail hosting. If you
+ever switch to an address at the domain, that is when MX records become
+necessary.
 
 ## Things intentionally NOT in this repo
 
