@@ -17,7 +17,7 @@ This guide assumes no prior web-dev experience.
    actually works.
 2. **Point the apex at GitHub Pages** (see "DNS records" below). Until then the
    site is unreachable and link previews can't load the preview image.
-3. **Keep the RLAlphaLabs line exactly where it is.** `rlalphalabs.mattersettle.com`
+3. **Keep the RLAlphaLabs line exactly where it is.** `rlalphalabs.com`
    is a separate personal project, not a Matter Settle product and not client
    work. This site references it only as an example of an engineering standard,
    and says so in plain words on the homepage, the How We Build page and every
@@ -165,8 +165,8 @@ line, and don't force-add files from it.
 - Create the GitHub repo and push this folder to it (`git init`, `git remote
   add origin …`, `git push -u origin main`).
 - GitHub → repo → **Settings → Pages → Source → "Deploy from a branch"**,
-  branch `main`, folder `/ (root)`. This is the same setup the sibling
-  `rlalphalabs` subdomain uses.
+  branch `main`, folder `/ (root)`. This is the same setup
+  `rlalphalabs.com` uses.
 
 ### DNS records (Cloudflare, for `mattersettle.com`)
 
@@ -182,9 +182,8 @@ add these in Cloudflare's DNS tab:
 | CNAME | `www` | `<your-github-username>.github.io` | DNS only |
 
 "DNS only" (grey cloud, not orange) matters: GitHub needs to see the real
-request to issue the HTTPS certificate. The existing `rlalphalabs` subdomain
-is a CNAME to the same `<your-github-username>.github.io` host, so this is the
-same setup one level up. After the records exist, GitHub → Settings → Pages →
+request to issue the HTTPS certificate. `rlalphalabs.com` uses the same setup
+(its `www` is a CNAME to the same `<your-github-username>.github.io` host). After the records exist, GitHub → Settings → Pages →
 Custom domain should show `mattersettle.com` verified, and "Enforce HTTPS"
 should be ticked.
 
