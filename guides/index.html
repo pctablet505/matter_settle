@@ -1,0 +1,307 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Guides for putting ML into production | Matter Settle</title>
+<meta name="description" content="Checklists, question lists and evaluation templates from Matter Settle for putting machine learning into production. Each has a copyable artifact.">
+<meta name="robots" content="index, follow, max-image-preview:large">
+<link rel="canonical" href="https://mattersettle.com/guides/">
+<meta name="color-scheme" content="dark light">
+<meta name="theme-color" content="#0B0C0D" media="(prefers-color-scheme: dark)">
+<meta name="theme-color" content="#F1F2EE" media="(prefers-color-scheme: light)">
+<script>(function(){var d=document.documentElement;d.className+=' js';try{var t=localStorage.getItem('ms-theme');if(t==='light'||t==='dark')d.setAttribute('data-theme',t);}catch(e){}})();</script>
+<link rel="preload" href="/assets/v2/fonts/atkinson-hyperlegible-next-wght.18b2a1a3.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="stylesheet" href="/assets/v2/style.a6ca61d2.css">
+<link rel="icon" href="/assets/v2/favicon.svg" type="image/svg+xml">
+<link rel="icon" href="/assets/v2/favicon-32.png" sizes="32x32" type="image/png">
+<link rel="apple-touch-icon" href="/assets/v2/apple-touch-icon.png">
+<link rel="alternate" type="application/atom+xml" title="Matter Settle guides" href="/feed.xml">
+<script src="/assets/v2/main.218e3a1e.js" defer></script>
+<meta property="og:site_name" content="Matter Settle">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Guides for putting ML into production | Matter Settle">
+<meta property="og:description" content="Checklists, question lists and evaluation templates from Matter Settle for putting machine learning into production. Each has a copyable artifact.">
+<meta property="og:url" content="https://mattersettle.com/guides/">
+<meta property="og:image" content="https://mattersettle.com/assets/og/guides.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:image:alt" content="Share card: Guides and templates. Matter Settle, AI engineering studio. Matter Settle is an AI engineering studio, not a law firm or a legal-settlement service. A signal steps up and settles onto a baseline.">
+<meta property="og:locale" content="en_IN">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Guides for putting ML into production | Matter Settle">
+<meta name="twitter:description" content="Checklists, question lists and evaluation templates from Matter Settle for putting machine learning into production. Each has a copyable artifact.">
+<meta name="twitter:image" content="https://mattersettle.com/assets/og/guides.png">
+<meta name="twitter:image:alt" content="Share card: Guides and templates. Matter Settle, AI engineering studio. Matter Settle is an AI engineering studio, not a law firm or a legal-settlement service. A signal steps up and settles onto a baseline.">
+<script type="application/ld+json">
+{
+ "@context": "https://schema.org",
+ "@graph": [
+  {
+   "@type": "Organization",
+   "@id": "https://mattersettle.com/#organization",
+   "name": "Matter Settle",
+   "alternateName": "MatterSettle",
+   "url": "https://mattersettle.com/",
+   "logo": "https://mattersettle.com/assets/logo.png"
+  },
+  {
+   "@type": "WebSite",
+   "@id": "https://mattersettle.com/#website",
+   "url": "https://mattersettle.com/",
+   "name": "Matter Settle",
+   "alternateName": [
+    "MatterSettle",
+    "mattersettle.com"
+   ],
+   "inLanguage": "en",
+   "publisher": {
+    "@id": "https://mattersettle.com/#organization"
+   }
+  },
+  {
+   "@type": "CollectionPage",
+   "@id": "https://mattersettle.com/guides/#webpage",
+   "url": "https://mattersettle.com/guides/",
+   "name": "Guides for putting ML into production | Matter Settle",
+   "description": "Checklists, question lists and evaluation templates from Matter Settle for putting machine learning into production. Each has a copyable artifact.",
+   "inLanguage": "en",
+   "isPartOf": {
+    "@id": "https://mattersettle.com/#website"
+   },
+   "about": {
+    "@id": "https://mattersettle.com/#organization"
+   },
+   "primaryImageOfPage": {
+    "@type": "ImageObject",
+    "url": "https://mattersettle.com/assets/og/guides.png",
+    "width": 1200,
+    "height": 630
+   },
+   "breadcrumb": {
+    "@id": "https://mattersettle.com/guides/#breadcrumb"
+   },
+   "mainEntity": {
+    "@type": "ItemList",
+    "itemListElement": [
+     {
+      "@type": "ListItem",
+      "position": 1,
+      "url": "https://mattersettle.com/guides/notebook-to-service/",
+      "name": "From notebook to service: a production-readiness checklist"
+     },
+     {
+      "@type": "ListItem",
+      "position": 2,
+      "url": "https://mattersettle.com/guides/questions-before-you-pay/",
+      "name": "Ten questions to ask any AI studio before you pay, including us"
+     },
+     {
+      "@type": "ListItem",
+      "position": 3,
+      "url": "https://mattersettle.com/guides/llm-evaluation-set-first/",
+      "name": "One-task LLM feature: build the evaluation set first"
+     }
+    ]
+   }
+  },
+  {
+   "@type": "BreadcrumbList",
+   "@id": "https://mattersettle.com/guides/#breadcrumb",
+   "itemListElement": [
+    {
+     "@type": "ListItem",
+     "position": 1,
+     "name": "Home",
+     "item": "https://mattersettle.com/"
+    },
+    {
+     "@type": "ListItem",
+     "position": 2,
+     "name": "Guides",
+     "item": "https://mattersettle.com/guides/"
+    }
+   ]
+  }
+ ]
+}
+</script>
+</head>
+<body>
+<a class="skip" href="#main">Skip to content</a>
+<header class="site-header">
+<div class="wrap">
+<a class="brand" href="/"><svg viewBox="0 0 32 32" width="32" height="32" aria-hidden="true" focusable="false"><rect class="mark-bg" width="32" height="32"/><path class="mark-line" fill="none" stroke-width="2.5" stroke-linejoin="round" stroke-linecap="round" d="M3,22 L8,22 L8,7 L10,17.4 L12,26.3 L14,26.3 L16,22.4 L18,19.6 L20,20.4 L22,22.3 L24,23 L26,22.4 L29,22"/></svg><span class="brand-text"><span class="brand-name">Matter Settle</span><span class="brand-sub">AI engineering studio</span></span></a>
+<nav class="site-nav" aria-label="Main">
+<button class="icon-btn menu-btn" type="button" aria-expanded="false" aria-controls="site-menu"><svg viewBox="0 0 20 20" aria-hidden="true" focusable="false"><path d="M2 5h16M2 10h16M2 15h16" stroke="currentColor" stroke-width="2" fill="none"/></svg><span class="menu-text">Menu</span></button>
+<ul class="nav-list" id="site-menu">
+<li><a href="/services/">Services</a></li>
+<li><a href="/work/">How we work</a></li>
+<li><a href="/pilot/">Pilot</a></li>
+<li><a href="/guides/" aria-current="page">Guides</a></li>
+<li><a href="/about/">About</a></li>
+</ul>
+<a class="btn nav-cta" href="/contact/">Start a conversation</a>
+</nav>
+<button class="icon-btn theme-btn" type="button" aria-label="Switch colour theme"><svg class="i-sun" viewBox="0 0 20 20" aria-hidden="true" focusable="false"><circle cx="10" cy="10" r="4" fill="none" stroke="currentColor" stroke-width="2"/><path d="M10 1v2.5M10 16.5V19M1 10h2.5M16.5 10H19M3.6 3.6l1.8 1.8M14.6 14.6l1.8 1.8M3.6 16.4l1.8-1.8M14.6 5.4l1.8-1.8" stroke="currentColor" stroke-width="2"/></svg><svg class="i-moon" viewBox="0 0 20 20" aria-hidden="true" focusable="false"><path d="M16.5 12.5A7 7 0 0 1 7.5 3.5a7 7 0 1 0 9 9z" fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round"/></svg></button>
+</div>
+</header>
+<main id="main" tabindex="-1">
+<section class="page-head">
+<div class="wrap">
+<nav class="crumbs label" aria-label="Breadcrumb"><ol><li><a href="/">Home</a></li><li><span aria-current="page">Guides</span></li></ol></nav>
+<div class="page-head-grid">
+<div>
+<p class="label">Guides <span aria-hidden="true">/</span> checklists and templates</p>
+<h1>Guides and templates</h1>
+<p class="lede">Original, dated and sourced guides for putting machine learning into production. Each has something you can copy into your own work today: a checklist, a list of questions, a template. Read them without signing up and without talking to anyone.</p>
+</div>
+<div class="page-fig" aria-hidden="true"><svg viewBox="0 0 480 120" width="480" height="120" focusable="false"><line class="trace-base" x1="0" y1="84" x2="480" y2="84"/><path class="trace-halo" d="M0,84 L40,84 L40,22 L48,34.9 L56,57.5 L64,82.7 L72,103.8 L80,116.5 L88,119.1 L96,112.7 L104,100.4 L112,86.3 L120,74 L128,66.3 L136,64.2 L144,67.3 L152,73.9 L160,81.9 L168,89 L176,93.6 L184,95.1 L192,93.7 L200,90.1 L208,85.7 L216,81.6 L224,78.8 L232,77.8 L240,78.4 L248,80.3 L256,82.8 L264,85.1 L272,86.8 L280,87.5 L288,87.2 L296,86.2 L304,84.8 L312,83.5 L320,82.5 L328,82.1 L336,82.2 L344,82.7 L352,83.4 L360,84.2 L368,84.8 L376,85.1 L384,85.1 L392,84.8 L400,84.4 L408,83.9 L416,83.6 L424,83.4 L432,83.4 L440,83.5 L448,83.8 L456,84 L464,84.2 L472,84.3 L480,84.3"/><path class="trace-line" pathLength="1" d="M0,84 L40,84 L40,22 L48,34.9 L56,57.5 L64,82.7 L72,103.8 L80,116.5 L88,119.1 L96,112.7 L104,100.4 L112,86.3 L120,74 L128,66.3 L136,64.2 L144,67.3 L152,73.9 L160,81.9 L168,89 L176,93.6 L184,95.1 L192,93.7 L200,90.1 L208,85.7 L216,81.6 L224,78.8 L232,77.8 L240,78.4 L248,80.3 L256,82.8 L264,85.1 L272,86.8 L280,87.5 L288,87.2 L296,86.2 L304,84.8 L312,83.5 L320,82.5 L328,82.1 L336,82.2 L344,82.7 L352,83.4 L360,84.2 L368,84.8 L376,85.1 L384,85.1 L392,84.8 L400,84.4 L408,83.9 L416,83.6 L424,83.4 L432,83.4 L440,83.5 L448,83.8 L456,84 L464,84.2 L472,84.3 L480,84.3"/></svg></div>
+</div>
+</div>
+</section>
+
+<section class="band" aria-labelledby="list-h">
+<div class="wrap">
+<div class="sec-head">
+<p class="label"><span class="n">01</span> / The guides</p>
+<h2 id="list-h">Three guides, one artifact each</h2>
+</div>
+<ul class="ch-list">
+<li><a class="ch" href="/guides/notebook-to-service/">
+<span class="ch-id label" aria-hidden="true">G1</span>
+<h3 class="ch-title"><span class="ch-name label">Checklist<span class="sr-only">:</span></span> From notebook to service: a production-readiness checklist</h3>
+<p class="ch-desc">The checks a model should pass before it serves real users, grouped into seven areas: the build, the data, the model, the service, the release, the monitoring and the people who own it. Each check comes with a sentence on why it matters. For the engineer who built the model and the lead who has to sign off on it.</p>
+<p class="ch-date mono">Published <time datetime="2026-10-16">2026-10-16</time>. Last reviewed <time datetime="2026-10-16">2026-10-16</time>.</p>
+<span class="ch-out mono" aria-hidden="true">copy: a plain-text checklist</span>
+</a></li>
+<li><a class="ch" href="/guides/questions-before-you-pay/">
+<span class="ch-id label" aria-hidden="true">G2</span>
+<h3 class="ch-title"><span class="ch-name label">Question list<span class="sr-only">:</span></span> Ten questions to ask any AI studio before you pay, including us</h3>
+<p class="ch-desc">What to ask an outside team before you sign: what will exist at the end, who owns the code, who does the work, how quality will be measured, and how you can leave. For each question, what a useful answer sounds like and what should worry you. For founders, product leads and anyone buying AI work for the first time.</p>
+<p class="ch-date mono">Published <time datetime="2026-10-16">2026-10-16</time>. Last reviewed <time datetime="2026-10-16">2026-10-16</time>.</p>
+<span class="ch-out mono" aria-hidden="true">copy: ten questions with space for notes</span>
+</a></li>
+<li><a class="ch" href="/guides/llm-evaluation-set-first/">
+<span class="ch-id label" aria-hidden="true">G3</span>
+<h3 class="ch-title"><span class="ch-name label">Template<span class="sr-only">:</span></span> One-task LLM feature: build the evaluation set first</h3>
+<p class="ch-desc">Why the evaluation set comes before the prompt, how to collect real examples, how to write a rubric a second person can apply, and how to use the set on every change. Includes an invented worked example. For developers and product teams building on a large language model.</p>
+<p class="ch-date mono">Published <time datetime="2026-10-16">2026-10-16</time>. Last reviewed <time datetime="2026-10-16">2026-10-16</time>.</p>
+<span class="ch-out mono" aria-hidden="true">copy: a template and a rubric</span>
+</a></li>
+</ul>
+</div>
+</section>
+
+<section class="band band--surface" aria-labelledby="start-h">
+<div class="wrap split">
+<div class="sec-head">
+<p class="label"><span class="n">02</span> / Where to start</p>
+<h2 id="start-h">Pick the guide that matches your week</h2>
+</div>
+<dl class="kv">
+<div><dt>You have a model in a notebook</dt><dd>Start with the <a href="/guides/notebook-to-service/">production-readiness checklist</a>. Mark each check yes, no or not needed, and look hard at the noes.</dd></div>
+<div><dt>You are about to hire outside help</dt><dd>Start with the <a href="/guides/questions-before-you-pay/">ten questions</a>. Ask every team the same ones, and write the answers down.</dd></div>
+<div><dt>You are building with an LLM</dt><dd>Start with the <a href="/guides/llm-evaluation-set-first/">evaluation set guide</a>. Write the set before you change another prompt.</dd></div>
+<div><dt>Your problem is a data feed</dt><dd>The checklist's data section is the place to begin, then the <a href="/services/data-pipelines/">data pipelines</a> page.</dd></div>
+</dl>
+</div>
+</section>
+
+<section class="band" aria-labelledby="how-h">
+<div class="wrap split">
+<div class="sec-head">
+<p class="label"><span class="n">03</span> / How they are written</p>
+<h2 id="how-h">The rules every guide follows</h2>
+<p>A guide is only useful if you can trust it. These are the rules we hold each one to.</p>
+</div>
+<ul class="ticks">
+<li><b>One thing to copy.</b> Every guide ends in a checklist, a question list or a template you can paste into your own notes.</li>
+<li><b>Invented examples, and labelled.</b> Worked examples are made up, and they say so. None describes a client.</li>
+<li><b>Sources named.</b> When a guide leans on outside work, it names the title, the publisher, the year and the date we read it.</li>
+<li><b>No borrowed numbers.</b> Guides quote no results from other projects, and make no claims about past work.</li>
+<li><b>Dated.</b> Each guide shows when it was published and when it was last reviewed.</li>
+<li><b>Corrected in the open.</b> If you find a mistake, email us. The guide is fixed and the review date changes.</li>
+<li><b>No gate.</b> No sign-up, no email form, no tracking.</li>
+</ul>
+</div>
+</section>
+
+<section class="band band--surface" aria-labelledby="words-h">
+<div class="wrap split">
+<div class="sec-head">
+<p class="label"><span class="n">04</span> / Words the guides use</p>
+<h2 id="words-h">A short glossary</h2>
+<p>The guides keep jargon to a minimum. These are the terms they cannot avoid.</p>
+</div>
+<dl class="kv">
+<div><dt>Baseline</dt><dd>The simplest thing that could work, such as a fixed rule or last week's value. A model is only useful if it beats it.</dd></div>
+<div><dt>Held-out data</dt><dd>Data kept aside and never used to build the model, so the test is fair.</dd></div>
+<div><dt>Evaluation set</dt><dd>A fixed list of real examples with the answer you expect, used to score every version of a feature.</dd></div>
+<div><dt>Rubric</dt><dd>A short list of criteria, each with a score and a sentence on what the score means.</dd></div>
+<div><dt>Quality gate</dt><dd>A check that stops bad data or a weaker model before it goes any further.</dd></div>
+<div><dt>Rollback</dt><dd>Going back to the last version that worked, with one command.</dd></div>
+<div><dt>Runbook</dt><dd>Written steps for running and fixing a system, so it does not depend on one person's memory.</dd></div>
+</dl>
+</div>
+</section>
+
+<section class="band" aria-labelledby="follow-h">
+<div class="wrap split">
+<div class="sec-head">
+<p class="label"><span class="n">05</span> / Follow new guides</p>
+<h2 id="follow-h">A feed, not a mailing list</h2>
+</div>
+<div class="stack">
+<p>New guides appear in an Atom feed at <a href="/feed.xml">mattersettle.com/feed.xml</a>. Add that address to any feed reader to see each new guide when it is published.</p>
+<p>There is no mailing list, so there is nothing to sign up for and nothing to unsubscribe from. No email address is collected.</p>
+</div>
+</div>
+</section>
+
+<section class="band band--surface" aria-labelledby="next-h">
+<div class="wrap split">
+<div class="sec-head">
+<p class="label">Next</p>
+<h2 id="next-h">Have a problem the guides do not cover?</h2>
+<p>Tell us what you are building in two or three sentences. An engineer replies.</p>
+<div class="btn-row"><a class="btn" href="/contact/">Start a conversation</a></div>
+</div>
+<div>
+<p class="label rel-label">Read next</p>
+<ul class="ch-list">
+<li><a class="ch" href="/pilot/#sample-scope"><span class="ch-id label" aria-hidden="true">DOC</span><h3 class="ch-title">A sample pilot scope, with notes</h3><p class="ch-desc">For an invented buyer, marked as an example.</p></a></li>
+<li><a class="ch" href="/services/"><span class="ch-id label" aria-hidden="true">REF</span><h3 class="ch-title">Services</h3><p class="ch-desc">The four kinds of work we take on.</p></a></li>
+</ul>
+</div>
+</div>
+</section>
+
+</main>
+<footer class="site-footer">
+<div class="wrap">
+<div class="foot-grid">
+<div>
+<a class="brand" href="/"><svg viewBox="0 0 32 32" width="32" height="32" aria-hidden="true" focusable="false"><rect class="mark-bg" width="32" height="32"/><path class="mark-line" fill="none" stroke-width="2.5" stroke-linejoin="round" stroke-linecap="round" d="M3,22 L8,22 L8,7 L10,17.4 L12,26.3 L14,26.3 L16,22.4 L18,19.6 L20,20.4 L22,22.3 L24,23 L26,22.4 L29,22"/></svg><span class="brand-text"><span class="brand-name">Matter Settle</span><span class="brand-sub">AI engineering studio</span></span></a>
+<p class="foot-disamb">Matter Settle is an AI engineering studio, not a law firm or a legal-settlement service.</p>
+</div>
+<nav aria-label="Footer">
+<ul class="foot-links">
+<li><a href="/about/#no-case-studies">What a new studio can show</a></li>
+<li><a href="/faq/">FAQ</a></li>
+<li><a href="/elsewhere/">Elsewhere</a></li>
+<li><a href="/privacy/">Privacy</a></li>
+<li><a href="/feed.xml">Guides feed</a></li>
+</ul>
+</nav>
+<div class="foot-meta">
+<p class="label">Email</p>
+<p><!--email_off--><a href="mailto:settleyourmatter@gmail.com">settleyourmatter@gmail.com</a><!--/email_off--></p>
+<p>AI engineering studio, India (IST)</p>
+</div>
+</div>
+<p class="foot-small">&copy; 2026 Matter Settle</p>
+</div>
+</footer>
+</body>
+</html>

@@ -1,0 +1,340 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Build the LLM evaluation set first: a template | Matter Settle</title>
+<meta name="description" content="Building a one-task LLM feature: write the evaluation set and the rubric first, then build. Includes a template and a rubric you can copy.">
+<meta name="robots" content="index, follow, max-image-preview:large">
+<link rel="canonical" href="https://mattersettle.com/guides/llm-evaluation-set-first/">
+<meta name="color-scheme" content="dark light">
+<meta name="theme-color" content="#0B0C0D" media="(prefers-color-scheme: dark)">
+<meta name="theme-color" content="#F1F2EE" media="(prefers-color-scheme: light)">
+<script>(function(){var d=document.documentElement;d.className+=' js';try{var t=localStorage.getItem('ms-theme');if(t==='light'||t==='dark')d.setAttribute('data-theme',t);}catch(e){}})();</script>
+<link rel="preload" href="/assets/v2/fonts/atkinson-hyperlegible-next-wght.18b2a1a3.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="stylesheet" href="/assets/v2/style.a6ca61d2.css">
+<link rel="icon" href="/assets/v2/favicon.svg" type="image/svg+xml">
+<link rel="icon" href="/assets/v2/favicon-32.png" sizes="32x32" type="image/png">
+<link rel="apple-touch-icon" href="/assets/v2/apple-touch-icon.png">
+<link rel="alternate" type="application/atom+xml" title="Matter Settle guides" href="/feed.xml">
+<script src="/assets/v2/main.218e3a1e.js" defer></script>
+<meta property="og:site_name" content="Matter Settle">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Build the LLM evaluation set first: a template | Matter Settle">
+<meta property="og:description" content="Building a one-task LLM feature: write the evaluation set and the rubric first, then build. Includes a template and a rubric you can copy.">
+<meta property="og:url" content="https://mattersettle.com/guides/llm-evaluation-set-first/">
+<meta property="og:image" content="https://mattersettle.com/assets/og/llm-evaluation-set-first.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:image:alt" content="Share card: Build the evaluation set first. An LLM feature template and rubric. Matter Settle is an AI engineering studio, not a law firm or a legal-settlement service. A signal steps up and settles onto a baseline.">
+<meta property="og:locale" content="en_IN">
+<meta property="article:published_time" content="2026-10-16">
+<meta property="article:modified_time" content="2026-10-16">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Build the LLM evaluation set first: a template | Matter Settle">
+<meta name="twitter:description" content="Building a one-task LLM feature: write the evaluation set and the rubric first, then build. Includes a template and a rubric you can copy.">
+<meta name="twitter:image" content="https://mattersettle.com/assets/og/llm-evaluation-set-first.png">
+<meta name="twitter:image:alt" content="Share card: Build the evaluation set first. An LLM feature template and rubric. Matter Settle is an AI engineering studio, not a law firm or a legal-settlement service. A signal steps up and settles onto a baseline.">
+<script type="application/ld+json">
+{
+ "@context": "https://schema.org",
+ "@graph": [
+  {
+   "@type": "Organization",
+   "@id": "https://mattersettle.com/#organization",
+   "name": "Matter Settle",
+   "alternateName": "MatterSettle",
+   "url": "https://mattersettle.com/",
+   "logo": "https://mattersettle.com/assets/logo.png"
+  },
+  {
+   "@type": "WebSite",
+   "@id": "https://mattersettle.com/#website",
+   "url": "https://mattersettle.com/",
+   "name": "Matter Settle",
+   "alternateName": [
+    "MatterSettle",
+    "mattersettle.com"
+   ],
+   "inLanguage": "en",
+   "publisher": {
+    "@id": "https://mattersettle.com/#organization"
+   }
+  },
+  {
+   "@type": "WebPage",
+   "@id": "https://mattersettle.com/guides/llm-evaluation-set-first/#webpage",
+   "url": "https://mattersettle.com/guides/llm-evaluation-set-first/",
+   "name": "Build the LLM evaluation set first: a template | Matter Settle",
+   "description": "Building a one-task LLM feature: write the evaluation set and the rubric first, then build. Includes a template and a rubric you can copy.",
+   "inLanguage": "en",
+   "isPartOf": {
+    "@id": "https://mattersettle.com/#website"
+   },
+   "about": {
+    "@id": "https://mattersettle.com/#organization"
+   },
+   "primaryImageOfPage": {
+    "@type": "ImageObject",
+    "url": "https://mattersettle.com/assets/og/llm-evaluation-set-first.png",
+    "width": 1200,
+    "height": 630
+   },
+   "breadcrumb": {
+    "@id": "https://mattersettle.com/guides/llm-evaluation-set-first/#breadcrumb"
+   },
+   "mainEntity": {
+    "@id": "https://mattersettle.com/guides/llm-evaluation-set-first/#article"
+   }
+  },
+  {
+   "@type": "BreadcrumbList",
+   "@id": "https://mattersettle.com/guides/llm-evaluation-set-first/#breadcrumb",
+   "itemListElement": [
+    {
+     "@type": "ListItem",
+     "position": 1,
+     "name": "Home",
+     "item": "https://mattersettle.com/"
+    },
+    {
+     "@type": "ListItem",
+     "position": 2,
+     "name": "Guides",
+     "item": "https://mattersettle.com/guides/"
+    },
+    {
+     "@type": "ListItem",
+     "position": 3,
+     "name": "LLM evaluation set first",
+     "item": "https://mattersettle.com/guides/llm-evaluation-set-first/"
+    }
+   ]
+  },
+  {
+   "@type": "Article",
+   "@id": "https://mattersettle.com/guides/llm-evaluation-set-first/#article",
+   "headline": "One-task LLM feature: build the evaluation set first",
+   "description": "Building a one-task LLM feature: write the evaluation set and the rubric first, then build. Includes a template and a rubric you can copy.",
+   "url": "https://mattersettle.com/guides/llm-evaluation-set-first/",
+   "inLanguage": "en",
+   "datePublished": "2026-10-16",
+   "dateModified": "2026-10-16",
+   "publisher": {
+    "@id": "https://mattersettle.com/#organization"
+   },
+   "isPartOf": {
+    "@id": "https://mattersettle.com/#website"
+   },
+   "mainEntityOfPage": {
+    "@id": "https://mattersettle.com/guides/llm-evaluation-set-first/#webpage"
+   },
+   "image": "https://mattersettle.com/assets/og/llm-evaluation-set-first.png"
+  }
+ ]
+}
+</script>
+</head>
+<body>
+<a class="skip" href="#main">Skip to content</a>
+<header class="site-header">
+<div class="wrap">
+<a class="brand" href="/"><svg viewBox="0 0 32 32" width="32" height="32" aria-hidden="true" focusable="false"><rect class="mark-bg" width="32" height="32"/><path class="mark-line" fill="none" stroke-width="2.5" stroke-linejoin="round" stroke-linecap="round" d="M3,22 L8,22 L8,7 L10,17.4 L12,26.3 L14,26.3 L16,22.4 L18,19.6 L20,20.4 L22,22.3 L24,23 L26,22.4 L29,22"/></svg><span class="brand-text"><span class="brand-name">Matter Settle</span><span class="brand-sub">AI engineering studio</span></span></a>
+<nav class="site-nav" aria-label="Main">
+<button class="icon-btn menu-btn" type="button" aria-expanded="false" aria-controls="site-menu"><svg viewBox="0 0 20 20" aria-hidden="true" focusable="false"><path d="M2 5h16M2 10h16M2 15h16" stroke="currentColor" stroke-width="2" fill="none"/></svg><span class="menu-text">Menu</span></button>
+<ul class="nav-list" id="site-menu">
+<li><a href="/services/">Services</a></li>
+<li><a href="/work/">How we work</a></li>
+<li><a href="/pilot/">Pilot</a></li>
+<li><a href="/guides/" aria-current="page">Guides</a></li>
+<li><a href="/about/">About</a></li>
+</ul>
+<a class="btn nav-cta" href="/contact/">Start a conversation</a>
+</nav>
+<button class="icon-btn theme-btn" type="button" aria-label="Switch colour theme"><svg class="i-sun" viewBox="0 0 20 20" aria-hidden="true" focusable="false"><circle cx="10" cy="10" r="4" fill="none" stroke="currentColor" stroke-width="2"/><path d="M10 1v2.5M10 16.5V19M1 10h2.5M16.5 10H19M3.6 3.6l1.8 1.8M14.6 14.6l1.8 1.8M3.6 16.4l1.8-1.8M14.6 5.4l1.8-1.8" stroke="currentColor" stroke-width="2"/></svg><svg class="i-moon" viewBox="0 0 20 20" aria-hidden="true" focusable="false"><path d="M16.5 12.5A7 7 0 0 1 7.5 3.5a7 7 0 1 0 9 9z" fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round"/></svg></button>
+</div>
+</header>
+<main id="main" tabindex="-1">
+<article class="guide" aria-labelledby="guide-h">
+<div class="page-head">
+<div class="wrap">
+<nav class="crumbs label" aria-label="Breadcrumb"><ol><li><a href="/">Home</a></li><li><a href="/guides/">Guides</a></li><li><span aria-current="page">LLM evaluation set first</span></li></ol></nav>
+<div class="page-head-grid">
+<div>
+<p class="label">Guide <span aria-hidden="true">/</span> template and rubric</p>
+<h1 id="guide-h">One-task LLM feature: build the evaluation set first</h1>
+<p class="lede">Many LLM features are judged by reading a few answers and deciding they look fine. Write the evaluation set first, and every later change gets a score instead of an opinion.</p>
+<p class="meta-line label">Published <time datetime="2026-10-16">2026-10-16</time> <span aria-hidden="true">/</span> Last reviewed <time datetime="2026-10-16">2026-10-16</time> <span aria-hidden="true">/</span> Publisher: Matter Settle</p>
+</div>
+<div class="page-fig" aria-hidden="true"><svg viewBox="0 0 480 120" width="480" height="120" focusable="false"><line class="trace-base" x1="0" y1="84" x2="480" y2="84"/><path class="trace-halo" d="M0,84 L40,84 L40,22 L48,34.9 L56,57.5 L64,82.7 L72,103.8 L80,116.5 L88,119.1 L96,112.7 L104,100.4 L112,86.3 L120,74 L128,66.3 L136,64.2 L144,67.3 L152,73.9 L160,81.9 L168,89 L176,93.6 L184,95.1 L192,93.7 L200,90.1 L208,85.7 L216,81.6 L224,78.8 L232,77.8 L240,78.4 L248,80.3 L256,82.8 L264,85.1 L272,86.8 L280,87.5 L288,87.2 L296,86.2 L304,84.8 L312,83.5 L320,82.5 L328,82.1 L336,82.2 L344,82.7 L352,83.4 L360,84.2 L368,84.8 L376,85.1 L384,85.1 L392,84.8 L400,84.4 L408,83.9 L416,83.6 L424,83.4 L432,83.4 L440,83.5 L448,83.8 L456,84 L464,84.2 L472,84.3 L480,84.3"/><path class="trace-line" pathLength="1" d="M0,84 L40,84 L40,22 L48,34.9 L56,57.5 L64,82.7 L72,103.8 L80,116.5 L88,119.1 L96,112.7 L104,100.4 L112,86.3 L120,74 L128,66.3 L136,64.2 L144,67.3 L152,73.9 L160,81.9 L168,89 L176,93.6 L184,95.1 L192,93.7 L200,90.1 L208,85.7 L216,81.6 L224,78.8 L232,77.8 L240,78.4 L248,80.3 L256,82.8 L264,85.1 L272,86.8 L280,87.5 L288,87.2 L296,86.2 L304,84.8 L312,83.5 L320,82.5 L328,82.1 L336,82.2 L344,82.7 L352,83.4 L360,84.2 L368,84.8 L376,85.1 L384,85.1 L392,84.8 L400,84.4 L408,83.9 L416,83.6 L424,83.4 L432,83.4 L440,83.5 L448,83.8 L456,84 L464,84.2 L472,84.3 L480,84.3"/></svg></div>
+</div>
+</div>
+</div>
+
+<div class="band">
+<div class="wrap guide-grid">
+<nav class="toc" aria-label="On this page">
+<p class="label">On this page</p>
+<ol>
+<li><a href="#who">Who this is for</a></li>
+<li><a href="#why">Why the set comes first</a></li>
+<li><a href="#step1">Write the task in one sentence</a></li>
+<li><a href="#step2">Collect real inputs</a></li>
+<li><a href="#step3">Write the expected answer, or a rubric</a></li>
+<li><a href="#step4">Choose how each criterion is scored</a></li>
+<li><a href="#step5">Score a simple baseline</a></li>
+<li><a href="#step6">Change one thing at a time</a></li>
+<li><a href="#step7">Grow the set from real use</a></li>
+<li><a href="#mistakes">Three mistakes to avoid</a></li>
+<li><a href="#sources">Sources</a></li>
+<li><a href="#written">How this guide was written</a></li>
+</ol>
+</nav>
+<div class="prose">
+<p class="summary">In short: before you build a one-task LLM feature, collect real examples, write the expected answer or a rubric for each, and make a runner that scores any version with one command. Score the simplest prompt first. Then change one thing at a time, and add every live failure to the set.</p>
+<h2 id="who">Who this is for</h2>
+<p>Developers and product teams building one feature on a large language model: sorting messages, pulling fields out of documents, answering questions from their own material, or drafting replies. The template and rubric are <a href="#template">at the end</a>, ready to copy.</p>
+
+<h2 id="why">Why the set comes first</h2>
+<p>Without a fixed set of examples, each prompt change is judged on whatever examples come to mind that day. A change that fixes one case can quietly break three others, and nobody sees it.</p>
+<p>In <cite>Your AI Product Needs Evals</cite> (2024), Hamel Husain argues that many unsuccessful AI products share one root cause: no solid way to evaluate them. Writing the set first has a second benefit. It forces you to say what the feature is for, which is half the work.</p>
+
+<h2 id="step1"><span class="label">Step 1</span> Write the task in one sentence</h2>
+<p>Say who sends what, and what should come back. An invented example: &ldquo;Given a customer support email, return one category from a fixed list and a priority from 1 to 3.&rdquo; Then list what is out of scope, and what the feature must refuse to do.</p>
+
+<h2 id="step2"><span class="label">Step 2</span> Collect real inputs</h2>
+<p>Use real inputs, not examples you write yourself. People write tidy examples; real users do not. Remove personal data first. Start with a few dozen and grow from there. Cover three kinds of case:</p>
+<ul class="ticks">
+<li><b>Common cases</b>, in the mix you really see.</li>
+<li><b>Hard cases</b>: unclear, very long, very short, or in mixed languages.</li>
+<li><b>Cases to refuse</b>: inputs the feature must decline or hand to a person.</li>
+</ul>
+
+<h2 id="step3"><span class="label">Step 3</span> Write the expected answer, or a rubric</h2>
+<p>Where there is one right answer, such as a category, a date or a field, write it down. Where there is not, such as a summary or a reply draft, write a rubric: a short list of criteria, each scored 0, 1 or 2, with a sentence that says what each score means.</p>
+<p>Ask the person who knows the domain to write or check these. Then test the rubric: two people scoring the same answers should agree most of the time. If they do not, the rubric is not clear yet.</p>
+
+<p>The template at the end keeps one example per row. Its fields:</p>
+<dl class="kv">
+<div><dt>id</dt><dd>A short, stable name, so results can be compared from run to run.</dd></div>
+<div><dt>input</dt><dd>The real input, with personal data removed.</dd></div>
+<div><dt>expected</dt><dd>The right answer, where one exists.</dd></div>
+<div><dt>must_include</dt><dd>Words or facts a good answer has to contain.</dd></div>
+<div><dt>must_not_include</dt><dd>Anything that makes an answer wrong or unsafe, such as a promise the business cannot keep.</dd></div>
+<div><dt>criteria</dt><dd>The rubric criteria that apply to this row.</dd></div>
+<div><dt>kind</dt><dd>Common, hard or refuse, so you can see where a change helps and where it hurts.</dd></div>
+</dl>
+
+<h2 id="step4"><span class="label">Step 4</span> Choose how each criterion is scored</h2>
+<dl class="kv">
+<div><dt>Exact match</dt><dd>For categories and yes-or-no answers.</dd></div>
+<div><dt>Field match</dt><dd>For structured output: compare each field on its own.</dd></div>
+<div><dt>Rule checks</dt><dd>Must include, must not include, format and length.</dd></div>
+<div><dt>A person</dt><dd>For tone and usefulness, on a sample.</dd></div>
+<div><dt>A model as judge</dt><dd>Fast, but compare it with a person's scores on a sample before you trust it.</dd></div>
+</dl>
+
+<h2 id="step5"><span class="label">Step 5</span> Score a simple baseline</h2>
+<p>Before any clever step, score the simplest version: one plain prompt. Record the score, the cost of each request and how long each request takes. Every later change has to beat this, on the same set.</p>
+
+<h2 id="step6"><span class="label">Step 6</span> Change one thing at a time</h2>
+<p>Change the prompt, the model, the retrieval step or the tool use, one at a time, and run the set again. Keep the set in version control next to the code. When a change helps on average but breaks a case that matters, the set shows it.</p>
+<p>Suppose, in the invented support example, a plain prompt sorts common emails well but answers an out-of-scope question instead of refusing it. A refusal rule is added. Running the set again shows whether the rule also made the feature refuse emails it should have sorted. Without the set, that second effect is easy to miss.</p>
+
+<h2 id="step7"><span class="label">Step 7</span> Grow the set from real use</h2>
+<p>Log failures in production. Add each one to the set with the right answer. The set gets harder as the feature gets better, which is the point.</p>
+
+<h2 id="mistakes">Three mistakes to avoid</h2>
+<ul class="ticks">
+<li><b>Reading only the average.</b> A higher average can hide a new failure on a case that matters. Look at the rows whose score changed, not only the total.</li>
+<li><b>Letting the set go stale.</b> If the set never changes, the feature slowly learns to pass it and nothing else. Add live failures, and retire rows that no longer look like real use.</li>
+<li><b>Testing on the examples you tuned on.</b> Keep a part of the set aside and look at it less often. If the score there lags far behind, the prompt has been fitted to the rest.</li>
+</ul>
+</div>
+
+<div class="artifact" id="template">
+<div class="artifact-head">
+<p class="label">Copy the template and rubric</p>
+<button class="btn btn--ghost js-only" type="button" data-copy-from="template-text" data-status="template-status">Copy template</button>
+</div>
+<p class="status" id="template-status" role="status"></p>
+<pre class="artifact-text" id="template-text">EVALUATION SET TEMPLATE (CSV)
+Source: mattersettle.com/guides/llm-evaluation-set-first/
+Example rows are invented. Replace them with real, anonymised inputs.
+
+id,input,expected,must_include,must_not_include,criteria,kind
+t-001,"My order arrived broken. Can I get a refund?",category=refund; priority=2,,a refund amount,correct;grounded;format,common
+t-002,"Your app logs me out every few minutes",category=bug; priority=2,,,correct;format,common
+t-003,"Third time asking: close my account today",category=cancellation; priority=1,,,correct;tone;format,hard
+t-004,"What will the weather be tomorrow?",category=out_of_scope; priority=3,,a weather forecast,refuses;format,refuse
+
+RUBRIC (score each criterion 0, 1 or 2)
+correct   2 right category and priority / 1 right category only / 0 wrong category
+grounded  2 uses only the given text / 1 adds harmless general facts / 0 invents facts
+format    2 exactly the agreed format / 1 fixable by a simple parser / 0 unusable
+refuses   2 declines out-of-scope input (expected is category=out_of_scope) / 1 declines, but unclearly / 0 answers anyway
+tone      2 fits the style guide / 1 acceptable / 0 would need rewriting
+
+RUN LOG (one line per run)
+date, version, change made, score per criterion, cost per request, time per request</pre>
+</div>
+
+<div class="prose">
+<h2 id="sources">Sources</h2>
+<ul class="src-list">
+<li><cite>Your AI Product Needs Evals</cite>. blog post by Hamel Husain, March 2024. Read 2026-10-16.</li>
+</ul>
+<p class="note">Cited for the argument that evaluation comes first. The steps, the template and the rubric above are original.</p>
+<h2 id="written">How this guide was written</h2>
+<p>Matter Settle publishes this guide without a byline. Its steps come from common engineering practice, not from any client project, and every example in it is invented. Outside work is cited above as background only, with the date it was read. The guide was last reviewed on <time datetime="2026-10-16">2026-10-16</time>. If you find a mistake, <a href="/contact/">tell us</a>: the guide will be corrected and its review date changed.</p>
+</div>
+</div>
+</div>
+</article>
+
+<section class="band band--surface" aria-labelledby="next-h">
+<div class="wrap split">
+<div class="sec-head">
+<p class="label">Next</p>
+<h2 id="next-h">Need help writing the set?</h2>
+<p>Tell us the task and who uses it. An engineer replies.</p>
+<div class="btn-row"><a class="btn" href="/contact/">Start a conversation</a></div>
+</div>
+<div>
+<p class="label rel-label">Related</p>
+<ul class="ch-list">
+<li><a class="ch" href="/services/llm-features/"><span class="ch-id label" aria-hidden="true">CH4</span><h3 class="ch-title">LLM features built around one task</h3><p class="ch-desc">How we build an LLM feature, with the set written first.</p></a></li>
+<li><a class="ch" href="/guides/notebook-to-service/"><span class="ch-id label" aria-hidden="true">G1</span><h3 class="ch-title">From notebook to service</h3><p class="ch-desc">The checks before a model serves real users.</p></a></li>
+</ul>
+</div>
+</div>
+</section>
+
+</main>
+<footer class="site-footer">
+<div class="wrap">
+<div class="foot-grid">
+<div>
+<a class="brand" href="/"><svg viewBox="0 0 32 32" width="32" height="32" aria-hidden="true" focusable="false"><rect class="mark-bg" width="32" height="32"/><path class="mark-line" fill="none" stroke-width="2.5" stroke-linejoin="round" stroke-linecap="round" d="M3,22 L8,22 L8,7 L10,17.4 L12,26.3 L14,26.3 L16,22.4 L18,19.6 L20,20.4 L22,22.3 L24,23 L26,22.4 L29,22"/></svg><span class="brand-text"><span class="brand-name">Matter Settle</span><span class="brand-sub">AI engineering studio</span></span></a>
+<p class="foot-disamb">Matter Settle is an AI engineering studio, not a law firm or a legal-settlement service.</p>
+</div>
+<nav aria-label="Footer">
+<ul class="foot-links">
+<li><a href="/about/#no-case-studies">What a new studio can show</a></li>
+<li><a href="/faq/">FAQ</a></li>
+<li><a href="/elsewhere/">Elsewhere</a></li>
+<li><a href="/privacy/">Privacy</a></li>
+<li><a href="/feed.xml">Guides feed</a></li>
+</ul>
+</nav>
+<div class="foot-meta">
+<p class="label">Email</p>
+<p><!--email_off--><a href="mailto:settleyourmatter@gmail.com">settleyourmatter@gmail.com</a><!--/email_off--></p>
+<p>AI engineering studio, India (IST)</p>
+</div>
+</div>
+<p class="foot-small">&copy; 2026 Matter Settle</p>
+</div>
+</footer>
+</body>
+</html>

@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+  <title>Matter Settle guides</title>
+  <subtitle>Guides and templates for putting machine learning into production, from Matter Settle, an AI engineering studio.</subtitle>
+  <link rel="self" type="application/atom+xml" href="https://mattersettle.com/feed.xml"/>
+  <link rel="alternate" type="text/html" href="https://mattersettle.com/guides/"/>
+  <id>https://mattersettle.com/guides/</id>
+  <updated>2026-10-16T00:00:00+05:30</updated>
+  <author><name>Matter Settle</name></author>
+  <icon>https://mattersettle.com/assets/logo.png</icon>
+  <entry>
+    <title>From notebook to service: a production-readiness checklist</title>
+    <link rel="alternate" type="text/html" href="https://mattersettle.com/guides/notebook-to-service/"/>
+    <id>https://mattersettle.com/guides/notebook-to-service/</id>
+    <published>2026-10-16T00:00:00+05:30</published>
+    <updated>2026-10-16T00:00:00+05:30</updated>
+    <summary>A production-readiness checklist for taking a model from a notebook to a running service: tests, data checks, deployment and monitoring. Copy it.</summary>
+  </entry>
+  <entry>
+    <title>Ten questions to ask any AI studio before you pay, including us</title>
+    <link rel="alternate" type="text/html" href="https://mattersettle.com/guides/questions-before-you-pay/"/>
+    <id>https://mattersettle.com/guides/questions-before-you-pay/</id>
+    <published>2026-10-16T00:00:00+05:30</published>
+    <updated>2026-10-16T00:00:00+05:30</updated>
+    <summary>Ten questions to ask any AI studio before you pay for a project, including Matter Settle, and what a useful answer looks like.</summary>
+  </entry>
+  <entry>
+    <title>One-task LLM feature: build the evaluation set first</title>
+    <link rel="alternate" type="text/html" href="https://mattersettle.com/guides/llm-evaluation-set-first/"/>
+    <id>https://mattersettle.com/guides/llm-evaluation-set-first/</id>
+    <published>2026-10-16T00:00:00+05:30</published>
+    <updated>2026-10-16T00:00:00+05:30</updated>
+    <summary>Building a one-task LLM feature: write the evaluation set and the rubric first, then build. Includes a template and a rubric you can copy.</summary>
+  </entry>
+</feed>

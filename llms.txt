@@ -1,38 +1,48 @@
 # Matter Settle
 
-> Matter Settle is an AI engineering studio based in India. A small team of engineers designs, builds and runs production AI systems end to end: data pipelines, models, the application around them, deployment and monitoring. It is a new studio with no public client case studies, and it says so. Matter Settle is not a legal, claims or settlement service.
+> Matter Settle is a small AI engineering studio in India (IST). A small team of engineers designs, builds and runs data pipelines, models, the application around them, and the deployment and monitoring. Matter Settle is an AI engineering studio, not a law firm or a legal-settlement service.
 
-## Pages
-
-- [Home](https://mattersettle.com/): what the studio builds, who it is for, the terms of an engagement, how to get in touch.
-- [How we build](https://mattersettle.com/work/): the engineering standard the studio works to and the terms it puts in writing.
-- [Privacy](https://mattersettle.com/privacy/): what the site does with data. No analytics, no tracking, no third-party requests.
+The studio is new. It has no client case studies, logos or testimonials, and the site does not claim any. Prices and pilot lengths are not published: each is set in a written scope before work starts.
 
 ## What the studio builds
 
-- Decision systems: reinforcement learning and simulation for problems where a wrong action costs real money, including reward design, risk constraints and honest evaluation.
-- Data pipelines that run unattended: ingestion, validation and storage with quality gates and multi-source fallback.
-- The application around a model: services, storage, deployment, dashboards and the tests that keep it releasable.
-- LLM features built around one specific task, with an evaluation set so a change can be judged better or worse.
-- Models that must run on constrained hardware: smaller models with measured latency and memory budgets.
+- [Decision systems](https://mattersettle.com/services/decision-systems/): Simulation, reinforcement learning and honest evaluation for repeated decisions where a wrong action has a real cost, delivered as code in the client's own repository and accounts.
+- [Data pipelines that run unattended](https://mattersettle.com/services/data-pipelines/): Ingestion, validation and storage built to run unattended, with checkpoints, retries, quality gates, alerts and a fallback source, delivered as code in the client's own repository and accounts.
+- [The application around a model](https://mattersettle.com/services/ml-applications/): The service, tests, deployment, monitoring and runbook around a working model, so it can be released, watched and rolled back, delivered in the client's own repository and accounts.
+- [LLM features built around one task](https://mattersettle.com/services/llm-features/): One LLM feature built around one task, with an evaluation set and rubric written first, so every change is measured, delivered in the client's own repository and accounts.
 
 ## Terms of an engagement (as stated on the site)
 
-- A written scope before any money moves: deliverable, price and what "done" means. If AI is the wrong tool, the studio says so.
-- A fixed-price, fixed-scope paid pilot.
-- Your code in your repository and your cloud accounts from the first commit.
-- Something runnable every week, not a status deck.
-- A pilot you can walk away from: you keep everything produced.
+- A fixed-price, fixed-scope paid pilot, agreed in writing before anything starts. Its length and price are set in that written scope.
+- Your code in your repository and your accounts from the first commit.
+- Something you can run every week, not a status deck.
+- Walk away after the pilot and keep everything it produced.
 - Direct access to the engineer doing the work.
+
+## Pages
+
+- [Home](https://mattersettle.com/): Matter Settle is a small AI engineering studio in India. It designs, builds and runs data pipelines, models and the systems around them.
+- [Services](https://mattersettle.com/services/): The four kinds of production AI work Matter Settle takes on: decision systems, data pipelines, the application around a model, and LLM features.
+- [Decision systems](https://mattersettle.com/services/decision-systems/): Decision systems from Matter Settle: reinforcement learning and simulation for repeated decisions where a wrong action has a real cost, with honest evaluation.
+- [Data pipelines](https://mattersettle.com/services/data-pipelines/): Data pipelines that run unattended: ingestion, validation and storage with checkpoints, retries, quality gates and alerts, in your own accounts.
+- [ML applications](https://mattersettle.com/services/ml-applications/): The application around a model: services, deployment, monitoring and the tests that keep a machine-learning system releasable, in your own repository.
+- [LLM features](https://mattersettle.com/services/llm-features/): LLM features built around one task, with an evaluation set built first, so you can tell whether a change made the feature better or worse.
+- [Pilot](https://mattersettle.com/pilot/): How a Matter Settle pilot works: a fixed-price, fixed-scope first project agreed in writing, with an annotated sample scope you can read before you call.
+- [How we work](https://mattersettle.com/work/): How Matter Settle works: the engineering standard, something runnable every week, and the terms we start from before any work begins.
+- [Guides](https://mattersettle.com/guides/): Checklists, question lists and evaluation templates from Matter Settle for putting machine learning into production. Each has a copyable artifact.
+- [About](https://mattersettle.com/about/): About Matter Settle: a small AI engineering studio in India (IST). What is true about the studio today, and what it does not have yet.
+- [FAQ](https://mattersettle.com/faq/): Answers to questions buyers ask Matter Settle before a first project: the paid pilot, code ownership, time zones, and when AI is the wrong tool.
+- [Contact](https://mattersettle.com/contact/): Start a conversation with Matter Settle. Email the studio from your own email app and an engineer replies. India, IST (UTC+5:30).
+- [Privacy](https://mattersettle.com/privacy/): Matter Settle's privacy notice: no backend, no analytics and no third-party requests. Email goes out from your own email app.
+
+## Guides
+
+- [From notebook to service: a production-readiness checklist](https://mattersettle.com/guides/notebook-to-service/): A production-readiness checklist for taking a model from a notebook to a running service: tests, data checks, deployment and monitoring. Copy it.
+- [Ten questions to ask any AI studio before you pay, including us](https://mattersettle.com/guides/questions-before-you-pay/): Ten questions to ask any AI studio before you pay for a project, including Matter Settle, and what a useful answer looks like.
+- [One-task LLM feature: build the evaluation set first](https://mattersettle.com/guides/llm-evaluation-set-first/): Building a one-task LLM feature: write the evaluation set and the rubric first, then build. Includes a template and a rubric you can copy.
 
 ## Contact
 
 - Email: settleyourmatter@gmail.com
-- Location: India, IST (UTC+5:30). Working hours overlap a full European working day and US mornings.
-
-## Linked projects
-
-Matter Settle links to two public projects as examples of careful measurement. They are separate projects with their own sites: not Matter Settle products, not client work, and not a credential.
-
-- [RLAlphaLabs](https://rlalphalabs.com/): AI trading research on Indian equities.
-- [Porchlamp](https://pctablet505.github.io/porchlamp/): ranks open-source projects by how they treat pull requests from outsiders.
+- Location: India, IST (UTC+5:30). The working day overlaps European working hours and US mornings.
+- An engineer replies. The site has no contact form endpoint: messages go out from the visitor's own email app.

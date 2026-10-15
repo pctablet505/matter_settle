@@ -1,0 +1,383 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Notebook to production: a readiness checklist | Matter Settle</title>
+<meta name="description" content="A production-readiness checklist for taking a model from a notebook to a running service: tests, data checks, deployment and monitoring. Copy it.">
+<meta name="robots" content="index, follow, max-image-preview:large">
+<link rel="canonical" href="https://mattersettle.com/guides/notebook-to-service/">
+<meta name="color-scheme" content="dark light">
+<meta name="theme-color" content="#0B0C0D" media="(prefers-color-scheme: dark)">
+<meta name="theme-color" content="#F1F2EE" media="(prefers-color-scheme: light)">
+<script>(function(){var d=document.documentElement;d.className+=' js';try{var t=localStorage.getItem('ms-theme');if(t==='light'||t==='dark')d.setAttribute('data-theme',t);}catch(e){}})();</script>
+<link rel="preload" href="/assets/v2/fonts/atkinson-hyperlegible-next-wght.18b2a1a3.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="stylesheet" href="/assets/v2/style.a6ca61d2.css">
+<link rel="icon" href="/assets/v2/favicon.svg" type="image/svg+xml">
+<link rel="icon" href="/assets/v2/favicon-32.png" sizes="32x32" type="image/png">
+<link rel="apple-touch-icon" href="/assets/v2/apple-touch-icon.png">
+<link rel="alternate" type="application/atom+xml" title="Matter Settle guides" href="/feed.xml">
+<script src="/assets/v2/main.218e3a1e.js" defer></script>
+<meta property="og:site_name" content="Matter Settle">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Notebook to production: a readiness checklist | Matter Settle">
+<meta property="og:description" content="A production-readiness checklist for taking a model from a notebook to a running service: tests, data checks, deployment and monitoring. Copy it.">
+<meta property="og:url" content="https://mattersettle.com/guides/notebook-to-service/">
+<meta property="og:image" content="https://mattersettle.com/assets/og/notebook-to-service.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:image:alt" content="Share card: From notebook to service. A production-readiness checklist. Matter Settle is an AI engineering studio, not a law firm or a legal-settlement service. A signal steps up and settles onto a baseline.">
+<meta property="og:locale" content="en_IN">
+<meta property="article:published_time" content="2026-10-16">
+<meta property="article:modified_time" content="2026-10-16">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Notebook to production: a readiness checklist | Matter Settle">
+<meta name="twitter:description" content="A production-readiness checklist for taking a model from a notebook to a running service: tests, data checks, deployment and monitoring. Copy it.">
+<meta name="twitter:image" content="https://mattersettle.com/assets/og/notebook-to-service.png">
+<meta name="twitter:image:alt" content="Share card: From notebook to service. A production-readiness checklist. Matter Settle is an AI engineering studio, not a law firm or a legal-settlement service. A signal steps up and settles onto a baseline.">
+<script type="application/ld+json">
+{
+ "@context": "https://schema.org",
+ "@graph": [
+  {
+   "@type": "Organization",
+   "@id": "https://mattersettle.com/#organization",
+   "name": "Matter Settle",
+   "alternateName": "MatterSettle",
+   "url": "https://mattersettle.com/",
+   "logo": "https://mattersettle.com/assets/logo.png"
+  },
+  {
+   "@type": "WebSite",
+   "@id": "https://mattersettle.com/#website",
+   "url": "https://mattersettle.com/",
+   "name": "Matter Settle",
+   "alternateName": [
+    "MatterSettle",
+    "mattersettle.com"
+   ],
+   "inLanguage": "en",
+   "publisher": {
+    "@id": "https://mattersettle.com/#organization"
+   }
+  },
+  {
+   "@type": "WebPage",
+   "@id": "https://mattersettle.com/guides/notebook-to-service/#webpage",
+   "url": "https://mattersettle.com/guides/notebook-to-service/",
+   "name": "Notebook to production: a readiness checklist | Matter Settle",
+   "description": "A production-readiness checklist for taking a model from a notebook to a running service: tests, data checks, deployment and monitoring. Copy it.",
+   "inLanguage": "en",
+   "isPartOf": {
+    "@id": "https://mattersettle.com/#website"
+   },
+   "about": {
+    "@id": "https://mattersettle.com/#organization"
+   },
+   "primaryImageOfPage": {
+    "@type": "ImageObject",
+    "url": "https://mattersettle.com/assets/og/notebook-to-service.png",
+    "width": 1200,
+    "height": 630
+   },
+   "breadcrumb": {
+    "@id": "https://mattersettle.com/guides/notebook-to-service/#breadcrumb"
+   },
+   "mainEntity": {
+    "@id": "https://mattersettle.com/guides/notebook-to-service/#article"
+   }
+  },
+  {
+   "@type": "BreadcrumbList",
+   "@id": "https://mattersettle.com/guides/notebook-to-service/#breadcrumb",
+   "itemListElement": [
+    {
+     "@type": "ListItem",
+     "position": 1,
+     "name": "Home",
+     "item": "https://mattersettle.com/"
+    },
+    {
+     "@type": "ListItem",
+     "position": 2,
+     "name": "Guides",
+     "item": "https://mattersettle.com/guides/"
+    },
+    {
+     "@type": "ListItem",
+     "position": 3,
+     "name": "Notebook to service",
+     "item": "https://mattersettle.com/guides/notebook-to-service/"
+    }
+   ]
+  },
+  {
+   "@type": "Article",
+   "@id": "https://mattersettle.com/guides/notebook-to-service/#article",
+   "headline": "From notebook to service: a production-readiness checklist",
+   "description": "A production-readiness checklist for taking a model from a notebook to a running service: tests, data checks, deployment and monitoring. Copy it.",
+   "url": "https://mattersettle.com/guides/notebook-to-service/",
+   "inLanguage": "en",
+   "datePublished": "2026-10-16",
+   "dateModified": "2026-10-16",
+   "publisher": {
+    "@id": "https://mattersettle.com/#organization"
+   },
+   "isPartOf": {
+    "@id": "https://mattersettle.com/#website"
+   },
+   "mainEntityOfPage": {
+    "@id": "https://mattersettle.com/guides/notebook-to-service/#webpage"
+   },
+   "image": "https://mattersettle.com/assets/og/notebook-to-service.png"
+  }
+ ]
+}
+</script>
+</head>
+<body>
+<a class="skip" href="#main">Skip to content</a>
+<header class="site-header">
+<div class="wrap">
+<a class="brand" href="/"><svg viewBox="0 0 32 32" width="32" height="32" aria-hidden="true" focusable="false"><rect class="mark-bg" width="32" height="32"/><path class="mark-line" fill="none" stroke-width="2.5" stroke-linejoin="round" stroke-linecap="round" d="M3,22 L8,22 L8,7 L10,17.4 L12,26.3 L14,26.3 L16,22.4 L18,19.6 L20,20.4 L22,22.3 L24,23 L26,22.4 L29,22"/></svg><span class="brand-text"><span class="brand-name">Matter Settle</span><span class="brand-sub">AI engineering studio</span></span></a>
+<nav class="site-nav" aria-label="Main">
+<button class="icon-btn menu-btn" type="button" aria-expanded="false" aria-controls="site-menu"><svg viewBox="0 0 20 20" aria-hidden="true" focusable="false"><path d="M2 5h16M2 10h16M2 15h16" stroke="currentColor" stroke-width="2" fill="none"/></svg><span class="menu-text">Menu</span></button>
+<ul class="nav-list" id="site-menu">
+<li><a href="/services/">Services</a></li>
+<li><a href="/work/">How we work</a></li>
+<li><a href="/pilot/">Pilot</a></li>
+<li><a href="/guides/" aria-current="page">Guides</a></li>
+<li><a href="/about/">About</a></li>
+</ul>
+<a class="btn nav-cta" href="/contact/">Start a conversation</a>
+</nav>
+<button class="icon-btn theme-btn" type="button" aria-label="Switch colour theme"><svg class="i-sun" viewBox="0 0 20 20" aria-hidden="true" focusable="false"><circle cx="10" cy="10" r="4" fill="none" stroke="currentColor" stroke-width="2"/><path d="M10 1v2.5M10 16.5V19M1 10h2.5M16.5 10H19M3.6 3.6l1.8 1.8M14.6 14.6l1.8 1.8M3.6 16.4l1.8-1.8M14.6 5.4l1.8-1.8" stroke="currentColor" stroke-width="2"/></svg><svg class="i-moon" viewBox="0 0 20 20" aria-hidden="true" focusable="false"><path d="M16.5 12.5A7 7 0 0 1 7.5 3.5a7 7 0 1 0 9 9z" fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round"/></svg></button>
+</div>
+</header>
+<main id="main" tabindex="-1">
+<article class="guide" aria-labelledby="guide-h">
+<div class="page-head">
+<div class="wrap">
+<nav class="crumbs label" aria-label="Breadcrumb"><ol><li><a href="/">Home</a></li><li><a href="/guides/">Guides</a></li><li><span aria-current="page">Notebook to service</span></li></ol></nav>
+<div class="page-head-grid">
+<div>
+<p class="label">Guide <span aria-hidden="true">/</span> checklist</p>
+<h1 id="guide-h">From notebook to service: a production-readiness checklist</h1>
+<p class="lede">A notebook proves that an idea can work once. A service has to work every day, for people who never saw the notebook. This checklist covers the gap, in seven short sections.</p>
+<p class="meta-line label">Published <time datetime="2026-10-16">2026-10-16</time> <span aria-hidden="true">/</span> Last reviewed <time datetime="2026-10-16">2026-10-16</time> <span aria-hidden="true">/</span> Publisher: Matter Settle</p>
+</div>
+<div class="page-fig" aria-hidden="true"><svg viewBox="0 0 480 120" width="480" height="120" focusable="false"><line class="trace-base" x1="0" y1="84" x2="480" y2="84"/><path class="trace-halo" d="M0,84 L40,84 L40,22 L48,34.9 L56,57.5 L64,82.7 L72,103.8 L80,116.5 L88,119.1 L96,112.7 L104,100.4 L112,86.3 L120,74 L128,66.3 L136,64.2 L144,67.3 L152,73.9 L160,81.9 L168,89 L176,93.6 L184,95.1 L192,93.7 L200,90.1 L208,85.7 L216,81.6 L224,78.8 L232,77.8 L240,78.4 L248,80.3 L256,82.8 L264,85.1 L272,86.8 L280,87.5 L288,87.2 L296,86.2 L304,84.8 L312,83.5 L320,82.5 L328,82.1 L336,82.2 L344,82.7 L352,83.4 L360,84.2 L368,84.8 L376,85.1 L384,85.1 L392,84.8 L400,84.4 L408,83.9 L416,83.6 L424,83.4 L432,83.4 L440,83.5 L448,83.8 L456,84 L464,84.2 L472,84.3 L480,84.3"/><path class="trace-line" pathLength="1" d="M0,84 L40,84 L40,22 L48,34.9 L56,57.5 L64,82.7 L72,103.8 L80,116.5 L88,119.1 L96,112.7 L104,100.4 L112,86.3 L120,74 L128,66.3 L136,64.2 L144,67.3 L152,73.9 L160,81.9 L168,89 L176,93.6 L184,95.1 L192,93.7 L200,90.1 L208,85.7 L216,81.6 L224,78.8 L232,77.8 L240,78.4 L248,80.3 L256,82.8 L264,85.1 L272,86.8 L280,87.5 L288,87.2 L296,86.2 L304,84.8 L312,83.5 L320,82.5 L328,82.1 L336,82.2 L344,82.7 L352,83.4 L360,84.2 L368,84.8 L376,85.1 L384,85.1 L392,84.8 L400,84.4 L408,83.9 L416,83.6 L424,83.4 L432,83.4 L440,83.5 L448,83.8 L456,84 L464,84.2 L472,84.3 L480,84.3"/></svg></div>
+</div>
+</div>
+</div>
+
+<div class="band">
+<div class="wrap guide-grid">
+<nav class="toc" aria-label="On this page">
+<p class="label">On this page</p>
+<ol>
+<li><a href="#who">Who this is for</a></li>
+<li><a href="#how">How to use it</a></li>
+<li><a href="#build">The build can be repeated</a></li>
+<li><a href="#data">The data is checked</a></li>
+<li><a href="#model">The model is measured honestly</a></li>
+<li><a href="#service">The service behaves</a></li>
+<li><a href="#release">Releases are boring</a></li>
+<li><a href="#monitor">Someone will notice</a></li>
+<li><a href="#owner">It has an owner</a></li>
+<li><a href="#left-out">What this checklist leaves out</a></li>
+<li><a href="#sources">Sources</a></li>
+<li><a href="#written">How this guide was written</a></li>
+</ol>
+</nav>
+<div class="prose">
+<p class="summary">In short: before a model serves real users, check seven things. The build can be repeated. The data is checked. The model beats a simple baseline on data it never saw. The service fails clearly. A release and a rollback are one command each. Someone is alerted when it drifts. And someone owns it.</p>
+<h2 id="who">Who this is for</h2>
+<p>The engineer who built the model, and the person who has to approve it for real use. Use it before the first release. Use it again when a service has run for a while and nobody has looked at it closely.</p>
+
+<h2 id="how">How to use it</h2>
+<p>Answer every check with yes, no or not needed. A no is not a failure. It is a risk you now know about. Next to each no, write who owns it and when it will be fixed, or why the risk is acceptable for now.</p>
+<p>A scored list like this is not a new idea. A 2017 research paper, <cite>The ML Test Score</cite>, proposed a rubric of tests and monitoring needs for production machine learning. The checks below are our own: shorter, written for a first release, and in plain language. A copyable version is <a href="#checklist">at the end</a>.</p>
+
+<h2 id="build"><span class="label">01</span> The build can be repeated</h2>
+<p>If you cannot rebuild yesterday's model, you cannot tell whether today's model is better.</p>
+<ul class="ticks">
+<li>Every dependency is pinned to an exact version.</li>
+<li>One command builds the environment from a clean checkout.</li>
+<li>Training runs from the repository, not from notebook cells run by hand in a chosen order.</li>
+<li>For each trained model, the code version, the data snapshot and the random seeds are recorded.</li>
+</ul>
+
+<h2 id="data"><span class="label">02</span> The data is checked</h2>
+<p>Many failures in production start in the data, not in the model. The 2015 paper <cite>Hidden Technical Debt in Machine Learning Systems</cite> describes why data dependencies cost more over time than code dependencies.</p>
+<ul class="ticks">
+<li>Inputs are checked against a schema: names, types and allowed ranges.</li>
+<li>Missing values, duplicates and gaps are counted, and a limit stops the run when they jump.</li>
+<li>Training and serving compute features with the same code.</li>
+<li>You can name the data each model was trained on.</li>
+</ul>
+
+<h2 id="model"><span class="label">03</span> The model is measured honestly</h2>
+<p>A score on data the model has already seen tells you almost nothing about tomorrow.</p>
+<ul class="ticks">
+<li>Quality is measured on data the model never saw. Where time matters, the test data comes after the training data.</li>
+<li>A simple baseline, such as a fixed rule or last week's value, is measured the same way, and the model beats it.</li>
+<li>The worst group of cases is reported next to the average.</li>
+<li>A test fails the build if quality drops below an agreed level.</li>
+</ul>
+
+<h2 id="service"><span class="label">04</span> The service behaves</h2>
+<p>Users meet the service, not the model. It has to fail in ways people can understand.</p>
+<ul class="ticks">
+<li>Inputs and outputs have a written format.</li>
+<li>Bad input gets a clear error, not a guess.</li>
+<li>Every call has a time limit, and there is a fallback answer for when the model fails.</li>
+<li>Speed and memory are measured at the load you expect.</li>
+</ul>
+
+<h2 id="release"><span class="label">05</span> Releases are boring</h2>
+<p>A release that needs a careful afternoon will happen less often, and each one will carry more risk.</p>
+<ul class="ticks">
+<li>Tests run on every change before it is merged.</li>
+<li>A release is one repeatable command.</li>
+<li>Going back to the last good version has been tried, not just planned.</li>
+<li>Each running model can be traced to its code and its data.</li>
+</ul>
+
+<h2 id="monitor"><span class="label">06</span> Someone will notice</h2>
+<p>A model can stop being right without throwing a single error. Monitoring is how you find out before your users do.</p>
+<ul class="ticks">
+<li>Live inputs are compared with the training data, and a large shift raises an alert.</li>
+<li>The spread of outputs is tracked over time.</li>
+<li>Errors and slow responses raise alerts.</li>
+<li>Every alert goes to a named person, not to a shared inbox nobody reads.</li>
+<li>A person reviews a sample of live predictions on a schedule.</li>
+</ul>
+
+<h2 id="owner"><span class="label">07</span> It has an owner</h2>
+<p>A service that only one person can run is one holiday away from an outage.</p>
+<ul class="ticks">
+<li>A runbook says how to release, roll back and retrain.</li>
+<li>Retraining is a written procedure, not a memory.</li>
+<li>One person owns the service, and a second person can run it.</li>
+<li>There is a date to go through this checklist again.</li>
+</ul>
+
+<h2 id="left-out">What this checklist leaves out</h2>
+<p>Security review, privacy and legal review, and fairness testing. Each matters, and each needs its own specialist and its own checklist. This one covers engineering readiness only.</p>
+</div>
+
+<div class="artifact" id="checklist">
+<div class="artifact-head">
+<p class="label">Copy this checklist</p>
+<button class="btn btn--ghost js-only" type="button" data-copy-from="checklist-text" data-status="checklist-status">Copy checklist</button>
+</div>
+<p class="status" id="checklist-status" role="status"></p>
+<pre class="artifact-text" id="checklist-text">PRODUCTION-READINESS CHECKLIST
+From notebook to service. Source: mattersettle.com/guides/notebook-to-service/
+Mark each check: yes / no / not needed. For each no, write the owner and a date, or the reason it can wait.
+
+01 THE BUILD CAN BE REPEATED
+[ ] 1.1 Every dependency is pinned to an exact version
+[ ] 1.2 One command builds the environment from a clean checkout
+[ ] 1.3 Training runs from the repository, not from hand-run cells
+[ ] 1.4 Code version, data snapshot and seeds are recorded per model
+
+02 THE DATA IS CHECKED
+[ ] 2.1 Inputs are checked against a schema (names, types, ranges)
+[ ] 2.2 Missing values, duplicates and gaps are counted, with limits
+[ ] 2.3 Training and serving compute features with the same code
+[ ] 2.4 The training data of each model can be named
+
+03 THE MODEL IS MEASURED HONESTLY
+[ ] 3.1 Quality is measured on unseen data (later in time, if time matters)
+[ ] 3.2 A simple baseline is measured the same way, and beaten
+[ ] 3.3 The worst group of cases is reported next to the average
+[ ] 3.4 A test fails the build if quality drops below an agreed level
+
+04 THE SERVICE BEHAVES
+[ ] 4.1 Inputs and outputs have a written format
+[ ] 4.2 Bad input gets a clear error, not a guess
+[ ] 4.3 Every call has a time limit, and there is a fallback answer
+[ ] 4.4 Speed and memory are measured at the expected load
+
+05 RELEASES ARE BORING
+[ ] 5.1 Tests run on every change before merge
+[ ] 5.2 A release is one repeatable command
+[ ] 5.3 Rolling back to the last good version has been tried
+[ ] 5.4 Each running model traces to its code and its data
+
+06 SOMEONE WILL NOTICE
+[ ] 6.1 Live inputs are compared with training data, with an alert
+[ ] 6.2 The spread of outputs is tracked over time
+[ ] 6.3 Errors and slow responses raise alerts
+[ ] 6.4 Every alert goes to a named person
+[ ] 6.5 A person reviews a sample of live predictions on a schedule
+
+07 IT HAS AN OWNER
+[ ] 7.1 A runbook covers release, rollback and retraining
+[ ] 7.2 Retraining is a written procedure
+[ ] 7.3 One owner, and a second person who can run it
+[ ] 7.4 A date to go through this checklist again</pre>
+</div>
+
+<div class="prose">
+<h2 id="sources">Sources</h2>
+<ul class="src-list">
+<li><cite>The ML Test Score: A Rubric for ML Production Readiness and Technical Debt Reduction</cite>. research paper, IEEE Big Data, 2017. Read 2026-10-16.</li>
+<li><cite>Hidden Technical Debt in Machine Learning Systems</cite>. research paper, NIPS 2015. Read 2026-10-16.</li>
+</ul>
+<p class="note">Both are cited as background. The checks above are original and are not taken from either paper.</p>
+<h2 id="written">How this guide was written</h2>
+<p>Matter Settle publishes this guide without a byline. Its steps come from common engineering practice, not from any client project, and every example in it is invented. Outside work is cited above as background only, with the date it was read. The guide was last reviewed on <time datetime="2026-10-16">2026-10-16</time>. If you find a mistake, <a href="/contact/">tell us</a>: the guide will be corrected and its review date changed.</p>
+</div>
+</div>
+</div>
+</article>
+
+<section class="band band--surface" aria-labelledby="next-h">
+<div class="wrap split">
+<div class="sec-head">
+<p class="label">Next</p>
+<h2 id="next-h">Too many noes on the list?</h2>
+<p>Tell us which ones, and what the model does. An engineer replies.</p>
+<div class="btn-row"><a class="btn" href="/contact/">Start a conversation</a></div>
+</div>
+<div>
+<p class="label rel-label">Related</p>
+<ul class="ch-list">
+<li><a class="ch" href="/services/ml-applications/"><span class="ch-id label" aria-hidden="true">CH3</span><h3 class="ch-title">The application around a model</h3><p class="ch-desc">The service, tests, release and monitoring this checklist asks for.</p></a></li>
+<li><a class="ch" href="/guides/llm-evaluation-set-first/"><span class="ch-id label" aria-hidden="true">G3</span><h3 class="ch-title">Build the evaluation set first</h3><p class="ch-desc">Honest measurement for an LLM feature.</p></a></li>
+</ul>
+</div>
+</div>
+</section>
+
+</main>
+<footer class="site-footer">
+<div class="wrap">
+<div class="foot-grid">
+<div>
+<a class="brand" href="/"><svg viewBox="0 0 32 32" width="32" height="32" aria-hidden="true" focusable="false"><rect class="mark-bg" width="32" height="32"/><path class="mark-line" fill="none" stroke-width="2.5" stroke-linejoin="round" stroke-linecap="round" d="M3,22 L8,22 L8,7 L10,17.4 L12,26.3 L14,26.3 L16,22.4 L18,19.6 L20,20.4 L22,22.3 L24,23 L26,22.4 L29,22"/></svg><span class="brand-text"><span class="brand-name">Matter Settle</span><span class="brand-sub">AI engineering studio</span></span></a>
+<p class="foot-disamb">Matter Settle is an AI engineering studio, not a law firm or a legal-settlement service.</p>
+</div>
+<nav aria-label="Footer">
+<ul class="foot-links">
+<li><a href="/about/#no-case-studies">What a new studio can show</a></li>
+<li><a href="/faq/">FAQ</a></li>
+<li><a href="/elsewhere/">Elsewhere</a></li>
+<li><a href="/privacy/">Privacy</a></li>
+<li><a href="/feed.xml">Guides feed</a></li>
+</ul>
+</nav>
+<div class="foot-meta">
+<p class="label">Email</p>
+<p><!--email_off--><a href="mailto:settleyourmatter@gmail.com">settleyourmatter@gmail.com</a><!--/email_off--></p>
+<p>AI engineering studio, India (IST)</p>
+</div>
+</div>
+<p class="foot-small">&copy; 2026 Matter Settle</p>
+</div>
+</footer>
+</body>
+</html>

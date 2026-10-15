@@ -1,551 +1,392 @@
 <!DOCTYPE html>
-<html lang="en" data-theme="dark">
+<html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
-  <title>Matter Settle — End-to-End AI Engineering Studio</title>
-  <meta name="description" content="Matter Settle is an AI engineering studio that designs, builds and runs production AI systems end to end. Fixed-price pilot, your code from day one." />
-  <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1" />
-
-  <!-- Link-preview cards (Slack / LinkedIn / iMessage). og:image must be an
-       absolute URL and must exist at /assets/og-cover.png — regenerate it with
-       PLAN/og-cover-source.html if you change the wording. -->
-  <meta property="og:site_name" content="Matter Settle" />
-  <meta property="og:title" content="Matter Settle — End-to-End AI Engineering Studio" />
-  <meta property="og:description" content="We design, build, and run production AI systems. New studio, honest terms: fixed-price pilot, your code from day one, direct access to the engineer building it." />
-  <meta property="og:type" content="website" />
-  <meta property="og:url" content="https://mattersettle.com/" />
-  <meta property="og:image" content="https://mattersettle.com/assets/og-cover.png" />
-  <meta property="og:image:width" content="1200" />
-  <meta property="og:image:height" content="630" />
-  <meta name="twitter:card" content="summary_large_image" />
-  <meta name="twitter:title" content="Matter Settle — End-to-End AI Engineering Studio" />
-  <meta name="twitter:description" content="We design, build, and run production AI systems. New studio, honest terms: fixed-price pilot, your code from day one, direct access to the engineer building it." />
-  <meta name="twitter:image" content="https://mattersettle.com/assets/og-cover.png" />
-  <link rel="canonical" href="https://mattersettle.com/" />
-  <link rel="icon" href="/assets/favicon.svg" type="image/svg+xml" />
-
-  <script>
-    /* No-FOUC theme bootstrap: apply saved/preferred theme before first paint */
-    (function () {
-      try {
-        var t = localStorage.getItem('ms-theme');
-        if (!t) t = window.matchMedia('(prefers-color-scheme: light)').matches ? 'light' : 'dark';
-        document.documentElement.dataset.theme = t;
-      } catch (e) { document.documentElement.dataset.theme = 'dark'; }
-    })();
-  </script>
-  <!-- Fonts are self-hosted in /assets/fonts (see css/style.css @font-face).
-       Nothing on this site loads from a third-party server. -->
-  <link rel="preload" href="/assets/fonts/inter-var.woff2" as="font" type="font/woff2" crossorigin />
-  <link rel="stylesheet" href="css/style.css" />
-  <noscript><style>.reveal{opacity:1!important;transform:none!important}</style></noscript>
-
-  <!-- Structured data. Only facts stated on the page itself: no names, no linked projects. -->
-  <script type="application/ld+json">
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Matter Settle | AI engineering studio</title>
+<meta name="description" content="Matter Settle is a small AI engineering studio in India. It designs, builds and runs data pipelines, models and the systems around them.">
+<meta name="robots" content="index, follow, max-image-preview:large">
+<link rel="canonical" href="https://mattersettle.com/">
+<meta name="color-scheme" content="dark light">
+<meta name="theme-color" content="#0B0C0D" media="(prefers-color-scheme: dark)">
+<meta name="theme-color" content="#F1F2EE" media="(prefers-color-scheme: light)">
+<script>(function(){var d=document.documentElement;d.className+=' js';try{var t=localStorage.getItem('ms-theme');if(t==='light'||t==='dark')d.setAttribute('data-theme',t);}catch(e){}})();</script>
+<link rel="preload" href="/assets/v2/fonts/atkinson-hyperlegible-next-wght.18b2a1a3.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="stylesheet" href="/assets/v2/style.a6ca61d2.css">
+<link rel="icon" href="/assets/v2/favicon.svg" type="image/svg+xml">
+<link rel="icon" href="/assets/v2/favicon-32.png" sizes="32x32" type="image/png">
+<link rel="apple-touch-icon" href="/assets/v2/apple-touch-icon.png">
+<link rel="alternate" type="application/atom+xml" title="Matter Settle guides" href="/feed.xml">
+<script src="/assets/v2/main.218e3a1e.js" defer></script>
+<meta property="og:site_name" content="Matter Settle">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Matter Settle | AI engineering studio">
+<meta property="og:description" content="Matter Settle is a small AI engineering studio in India. It designs, builds and runs data pipelines, models and the systems around them.">
+<meta property="og:url" content="https://mattersettle.com/">
+<meta property="og:image" content="https://mattersettle.com/assets/og/home.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:image:alt" content="Share card: Matter Settle. AI engineering studio. Matter Settle is an AI engineering studio, not a law firm or a legal-settlement service. A signal steps up and settles onto a baseline.">
+<meta property="og:locale" content="en_IN">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Matter Settle | AI engineering studio">
+<meta name="twitter:description" content="Matter Settle is a small AI engineering studio in India. It designs, builds and runs data pipelines, models and the systems around them.">
+<meta name="twitter:image" content="https://mattersettle.com/assets/og/home.png">
+<meta name="twitter:image:alt" content="Share card: Matter Settle. AI engineering studio. Matter Settle is an AI engineering studio, not a law firm or a legal-settlement service. A signal steps up and settles onto a baseline.">
+<script type="application/ld+json">
+{
+ "@context": "https://schema.org",
+ "@graph": [
   {
-    "@context": "https://schema.org",
-    "@graph": [
-      {
-        "@type": "Organization",
-        "@id": "https://mattersettle.com/#organization",
-        "name": "Matter Settle",
-        "url": "https://mattersettle.com/",
-        "logo": "https://mattersettle.com/assets/favicon.svg",
-        "description": "A small studio of engineers building end-to-end AI systems: data pipelines, models, applications, deployment and monitoring.",
-        "disambiguatingDescription": "An AI engineering studio. Not a legal, claims or settlement service.",
-        "address": {
-          "@type": "PostalAddress",
-          "addressCountry": "IN"
-        },
-        "contactPoint": {
-          "@type": "ContactPoint",
-          "contactType": "sales",
-          "email": "settleyourmatter@gmail.com"
-        },
-        "knowsAbout": [
-          "Machine learning engineering",
-          "Data pipelines",
-          "Reinforcement learning",
-          "Large language model applications",
-          "Model deployment and monitoring",
-          "Machine learning on constrained hardware"
-        ],
-        "makesOffer": [
-          {
-            "@type": "Offer",
-            "itemOffered": {
-              "@type": "Service",
-              "name": "Decision systems",
-              "description": "Reinforcement learning and simulation for problems where a wrong action costs real money: reward design, risk constraints, honest evaluation.",
-              "provider": {
-                "@id": "https://mattersettle.com/#organization"
-              }
-            }
-          },
-          {
-            "@type": "Offer",
-            "itemOffered": {
-              "@type": "Service",
-              "name": "Data pipelines that run unattended",
-              "description": "Ingestion, validation and storage built to run unattended: checkpointed parallel downloads, quality gates, multi-source fallback.",
-              "provider": {
-                "@id": "https://mattersettle.com/#organization"
-              }
-            }
-          },
-          {
-            "@type": "Offer",
-            "itemOffered": {
-              "@type": "Service",
-              "name": "The application around the model",
-              "description": "The application around the model: services, storage, deployment, dashboards, and the test discipline that keeps it releasable.",
-              "provider": {
-                "@id": "https://mattersettle.com/#organization"
-              }
-            }
-          },
-          {
-            "@type": "Offer",
-            "itemOffered": {
-              "@type": "Service",
-              "name": "LLM features that do one job well",
-              "description": "Retrieval, tool use and agent workflows built around one specific task, with an evaluation set so you can tell whether a change made it better or worse.",
-              "provider": {
-                "@id": "https://mattersettle.com/#organization"
-              }
-            }
-          },
-          {
-            "@type": "Offer",
-            "itemOffered": {
-              "@type": "Service",
-              "name": "Models that run where the data is",
-              "description": "Making a model fit and run on constrained hardware instead of shipping everything to a GPU server: smaller models, measured latency and memory budgets, honest accuracy trade-offs.",
-              "provider": {
-                "@id": "https://mattersettle.com/#organization"
-              }
-            }
-          }
-        ]
-      },
-      {
-        "@type": "WebSite",
-        "@id": "https://mattersettle.com/#website",
-        "url": "https://mattersettle.com/",
-        "name": "Matter Settle",
-        "inLanguage": "en",
-        "description": "An AI engineering studio: production AI systems built end to end.",
-        "publisher": {
-          "@id": "https://mattersettle.com/#organization"
-        }
-      },
-      {
-        "@type": "WebPage",
-        "@id": "https://mattersettle.com/#webpage",
-        "url": "https://mattersettle.com/",
-        "name": "Matter Settle — End-to-End AI Engineering Studio",
-        "isPartOf": {
-          "@id": "https://mattersettle.com/#website"
-        },
-        "about": {
-          "@id": "https://mattersettle.com/#organization"
-        }
+   "@type": "Organization",
+   "@id": "https://mattersettle.com/#organization",
+   "name": "Matter Settle",
+   "alternateName": "MatterSettle",
+   "url": "https://mattersettle.com/",
+   "logo": "https://mattersettle.com/assets/logo.png",
+   "description": "A small AI engineering studio in India. It designs, builds and runs data pipelines, models, the application around them, and the deployment and monitoring.",
+   "disambiguatingDescription": "Matter Settle is an AI engineering studio, not a law firm or a legal-settlement service.",
+   "address": {
+    "@type": "PostalAddress",
+    "addressCountry": "IN"
+   },
+   "contactPoint": {
+    "@type": "ContactPoint",
+    "contactType": "sales",
+    "email": "settleyourmatter@gmail.com"
+   },
+   "knowsAbout": [
+    "Machine learning engineering",
+    "Data pipelines",
+    "Reinforcement learning",
+    "Large language model applications",
+    "Model deployment and monitoring"
+   ],
+   "makesOffer": [
+    {
+     "@type": "Offer",
+     "itemOffered": {
+      "@type": "Service",
+      "name": "Decision systems",
+      "url": "https://mattersettle.com/services/decision-systems/",
+      "provider": {
+       "@id": "https://mattersettle.com/#organization"
       }
-    ]
+     }
+    },
+    {
+     "@type": "Offer",
+     "itemOffered": {
+      "@type": "Service",
+      "name": "Data pipelines that run unattended",
+      "url": "https://mattersettle.com/services/data-pipelines/",
+      "provider": {
+       "@id": "https://mattersettle.com/#organization"
+      }
+     }
+    },
+    {
+     "@type": "Offer",
+     "itemOffered": {
+      "@type": "Service",
+      "name": "The application around a model",
+      "url": "https://mattersettle.com/services/ml-applications/",
+      "provider": {
+       "@id": "https://mattersettle.com/#organization"
+      }
+     }
+    },
+    {
+     "@type": "Offer",
+     "itemOffered": {
+      "@type": "Service",
+      "name": "LLM features built around one task",
+      "url": "https://mattersettle.com/services/llm-features/",
+      "provider": {
+       "@id": "https://mattersettle.com/#organization"
+      }
+     }
+    }
+   ]
+  },
+  {
+   "@type": "WebSite",
+   "@id": "https://mattersettle.com/#website",
+   "url": "https://mattersettle.com/",
+   "name": "Matter Settle",
+   "alternateName": [
+    "MatterSettle",
+    "mattersettle.com"
+   ],
+   "inLanguage": "en",
+   "publisher": {
+    "@id": "https://mattersettle.com/#organization"
+   }
+  },
+  {
+   "@type": "WebPage",
+   "@id": "https://mattersettle.com/#webpage",
+   "url": "https://mattersettle.com/",
+   "name": "Matter Settle | AI engineering studio",
+   "description": "Matter Settle is a small AI engineering studio in India. It designs, builds and runs data pipelines, models and the systems around them.",
+   "inLanguage": "en",
+   "isPartOf": {
+    "@id": "https://mattersettle.com/#website"
+   },
+   "about": {
+    "@id": "https://mattersettle.com/#organization"
+   },
+   "primaryImageOfPage": {
+    "@type": "ImageObject",
+    "url": "https://mattersettle.com/assets/og/home.png",
+    "width": 1200,
+    "height": 630
+   }
   }
-  </script>
+ ]
+}
+</script>
 </head>
 <body>
-
-<a class="skip-link" href="#hero">Skip to content</a>
-<div id="scrollProgress"></div>
-
-<!-- ════════════════════ NAV ════════════════════ -->
-<nav id="navbar">
-  <div class="nav-inner">
-    <a href="#hero" class="nav-logo">
-      <!-- Logo mark: a signal settling onto a baseline. Same SVG is used in the
-           footer and in /assets/favicon.svg — change all three together. -->
-      <svg class="logo-mark" viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
-        <rect x="2.5" y="2.5" width="19" height="19" rx="5.5" />
-        <path d="M6.5 17h11" />
-        <path d="M8.5 17v-4.5l2.6 2.4 2.2-6 2.2 8.1" />
-      </svg>
-      Matter Settle
-    </a>
-    <ul class="nav-links">
-      <li><a href="#work">Where We Stand</a></li>
-      <li><a href="#services">What We Build</a></li>
-      <li><a href="#process">How We Work</a></li>
-      <li><a href="#contact" class="nav-cta">Get in Touch</a></li>
-    </ul>
-    <button class="theme-toggle" id="themeToggle" aria-label="Toggle color theme" title="Toggle light / dark theme">
-      <svg class="icon-sun" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><circle cx="12" cy="12" r="4"/><path d="M12 2v2m0 16v2M4.9 4.9l1.4 1.4m11.4 11.4 1.4 1.4M2 12h2m16 0h2M4.9 19.1l1.4-1.4M17.7 6.3l1.4-1.4"/></svg>
-      <svg class="icon-moon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 12.8A9 9 0 1 1 11.2 3a7 7 0 0 0 9.8 9.8z"/></svg>
-    </button>
-    <button class="hamburger" id="hamburger" aria-label="Menu" aria-expanded="false" aria-controls="mobileMenu">
-      <span></span><span></span><span></span>
-    </button>
-  </div>
-  <div class="mobile-menu" id="mobileMenu">
-    <a href="#work">Where We Stand</a>
-    <a href="#services">What We Build</a>
-    <a href="#process">How We Work</a>
-    <a href="#contact" class="nav-cta">Get in Touch</a>
-  </div>
+<a class="skip" href="#main">Skip to content</a>
+<header class="site-header">
+<div class="wrap">
+<a class="brand" href="/"><svg viewBox="0 0 32 32" width="32" height="32" aria-hidden="true" focusable="false"><rect class="mark-bg" width="32" height="32"/><path class="mark-line" fill="none" stroke-width="2.5" stroke-linejoin="round" stroke-linecap="round" d="M3,22 L8,22 L8,7 L10,17.4 L12,26.3 L14,26.3 L16,22.4 L18,19.6 L20,20.4 L22,22.3 L24,23 L26,22.4 L29,22"/></svg><span class="brand-text"><span class="brand-name">Matter Settle</span><span class="brand-sub">AI engineering studio</span></span></a>
+<nav class="site-nav" aria-label="Main">
+<button class="icon-btn menu-btn" type="button" aria-expanded="false" aria-controls="site-menu"><svg viewBox="0 0 20 20" aria-hidden="true" focusable="false"><path d="M2 5h16M2 10h16M2 15h16" stroke="currentColor" stroke-width="2" fill="none"/></svg><span class="menu-text">Menu</span></button>
+<ul class="nav-list" id="site-menu">
+<li><a href="/services/">Services</a></li>
+<li><a href="/work/">How we work</a></li>
+<li><a href="/pilot/">Pilot</a></li>
+<li><a href="/guides/">Guides</a></li>
+<li><a href="/about/">About</a></li>
+</ul>
+<a class="btn nav-cta" href="/contact/">Start a conversation</a>
 </nav>
-
-<!-- ════════════════════ HERO ════════════════════ -->
-<!-- This studio has no client work and no public artifact of its own, so the
-     fold cannot carry evidence. It carries the next most useful thing instead:
-     the terms of an engagement, which are true today and which a stranger can
-     hold us to. Do NOT put borrowed numbers from another project in here. -->
-<section id="hero">
-  <div class="container hero-grid">
-    <div class="hero-copy">
-      <div class="hero-pills reveal">
-        <span class="pill">End-to-end AI engineering</span>
-      </div>
-      <h1 class="hero-h1 reveal">
-        From notebook<br />to production system.
-      </h1>
-      <p class="hero-p reveal">
-        A small studio of engineers. We design, build, and run the whole thing —
-        data pipeline, model, application, deployment, monitoring.
-      </p>
-      <p class="hero-icp reveal">
-        <b>Who this is for:</b> teams that need an ML system running in production —
-        and someone accountable for keeping it running.
-      </p>
-      <div class="hero-ctas reveal">
-        <a href="#contact" class="btn-primary">Start a Conversation</a>
-        <a href="#work" class="btn-ghost">Why trust a new studio? →</a>
-      </div>
-    </div>
-
-    <!-- ── Fold-level terms panel ─────────────────────────────────────────
-         Every line here is a commitment that can be kept on day one, not a
-         claim about past work. If one stops being true, delete it. -->
-    <aside class="proof-panel reveal" aria-label="The terms of an engagement">
-      <div class="pp-head">The terms, up front</div>
-      <div class="pp-title">A new studio, scoped so you can walk away</div>
-      <ul class="pp-list">
-        <li><span class="pp-k">Pilot</span><span class="pp-v"><b>Fixed price, fixed scope</b>, agreed in writing before anything starts</span></li>
-        <li><span class="pp-k">Code</span><span class="pp-v">Yours from the first commit — your repo, your accounts, your infrastructure</span></li>
-        <li><span class="pp-k">Access</span><span class="pp-v">You talk to the engineer building it, not an account manager</span></li>
-        <li><span class="pp-k">Cadence</span><span class="pp-v">Every week, something you can run yourself — not a status deck</span></li>
-        <li><span class="pp-k">Exit</span><span class="pp-v">If the pilot doesn't convince you, you keep everything and we stop</span></li>
-      </ul>
-      <a class="pp-link" href="#contact">Tell us what you're building →</a>
-      <p class="pp-note">New studio. No client case studies yet, and we're not going to invent any.</p>
-    </aside>
-  </div>
+<button class="icon-btn theme-btn" type="button" aria-label="Switch colour theme"><svg class="i-sun" viewBox="0 0 20 20" aria-hidden="true" focusable="false"><circle cx="10" cy="10" r="4" fill="none" stroke="currentColor" stroke-width="2"/><path d="M10 1v2.5M10 16.5V19M1 10h2.5M16.5 10H19M3.6 3.6l1.8 1.8M14.6 14.6l1.8 1.8M3.6 16.4l1.8-1.8M14.6 5.4l1.8-1.8" stroke="currentColor" stroke-width="2"/></svg><svg class="i-moon" viewBox="0 0 20 20" aria-hidden="true" focusable="false"><path d="M16.5 12.5A7 7 0 0 1 7.5 3.5a7 7 0 1 0 9 9z" fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round"/></svg></button>
+</div>
+</header>
+<main id="main" tabindex="-1">
+<section class="hero" aria-labelledby="top-h">
+<div class="wrap">
+<div class="hero-grid">
+<div class="hero-copy">
+<p class="label">AI engineering studio <span aria-hidden="true">/</span> India, IST</p>
+<h1 id="top-h">From notebook to production system.</h1>
+<p class="lede">Matter Settle is a small AI engineering studio in India. We design, build and run data pipelines, models, the application around them, and the deployment and monitoring.</p>
+<p class="hero-for">For teams that need a machine-learning system running in production and someone accountable for keeping it running.</p>
+<div class="btn-row">
+<a class="btn" href="/contact/">Start a conversation</a>
+<a class="btn btn--ghost" href="/pilot/#sample-scope">See a sample pilot scope</a>
+</div>
+<p class="disamb">Matter Settle is an AI engineering studio, not a law firm or a legal-settlement service.</p>
+</div>
+<figure class="hero-fig">
+<svg viewBox="0 0 600 300" width="600" height="300" role="img" aria-label="A signal steps up, rings, and settles onto a baseline">
+<line class="trace-base" x1="0" y1="200" x2="600" y2="200"/>
+<path class="trace-halo" d="M0,200 L40,200 L40,30 L45,40 L50,55.3 L55,75 L60,98 L65,123.1 L70,149.2 L75,175.1 L80,200 L85,222.9 L90,243.1 L95,260.1 L100,273.4 L105,282.9 L110,288.4 L115,290 L120,288.1 L125,282.9 L130,275 L135,264.8 L140,252.9 L145,239.9 L150,226.4 L155,212.9 L160,200 L165,188.1 L170,177.6 L175,168.8 L180,161.9 L185,157 L190,154.2 L195,153.3 L200,154.3 L205,157 L210,161.1 L215,166.4 L220,172.6 L225,179.3 L230,186.3 L235,193.3 L240,200 L245,206.2 L250,211.6 L255,216.2 L260,219.7 L265,222.3 L270,223.7 L275,224.2 L280,223.7 L285,222.3 L290,220.1 L295,217.4 L300,214.2 L305,210.7 L310,207.1 L315,203.5 L320,200 L325,196.8 L330,194 L335,191.6 L340,189.8 L345,188.5 L350,187.7 L355,187.5 L360,187.7 L365,188.4 L370,189.6 L375,191 L380,192.6 L385,194.4 L390,196.3 L395,198.2 L400,200 L405,201.7 L410,203.1 L415,204.3 L420,205.3 L425,206 L430,206.4 L435,206.5 L440,206.4 L445,206 L450,205.4 L455,204.7 L460,203.8 L465,202.9 L470,201.9 L475,200.9 L480,200 L485,199.1 L490,198.4 L495,197.8 L500,197.3 L505,196.9 L510,196.7 L515,196.6 L520,196.7 L525,196.9 L530,197.2 L535,197.6 L540,198 L545,198.5 L550,199 L555,199.5 L560,200 L565,200.4 L570,200.8 L575,201.2 L580,201.4 L585,201.6 L590,201.7 L595,201.7 L600,201.7"/>
+<path class="trace-line" pathLength="1" d="M0,200 L40,200 L40,30 L45,40 L50,55.3 L55,75 L60,98 L65,123.1 L70,149.2 L75,175.1 L80,200 L85,222.9 L90,243.1 L95,260.1 L100,273.4 L105,282.9 L110,288.4 L115,290 L120,288.1 L125,282.9 L130,275 L135,264.8 L140,252.9 L145,239.9 L150,226.4 L155,212.9 L160,200 L165,188.1 L170,177.6 L175,168.8 L180,161.9 L185,157 L190,154.2 L195,153.3 L200,154.3 L205,157 L210,161.1 L215,166.4 L220,172.6 L225,179.3 L230,186.3 L235,193.3 L240,200 L245,206.2 L250,211.6 L255,216.2 L260,219.7 L265,222.3 L270,223.7 L275,224.2 L280,223.7 L285,222.3 L290,220.1 L295,217.4 L300,214.2 L305,210.7 L310,207.1 L315,203.5 L320,200 L325,196.8 L330,194 L335,191.6 L340,189.8 L345,188.5 L350,187.7 L355,187.5 L360,187.7 L365,188.4 L370,189.6 L375,191 L380,192.6 L385,194.4 L390,196.3 L395,198.2 L400,200 L405,201.7 L410,203.1 L415,204.3 L420,205.3 L425,206 L430,206.4 L435,206.5 L440,206.4 L445,206 L450,205.4 L455,204.7 L460,203.8 L465,202.9 L470,201.9 L475,200.9 L480,200 L485,199.1 L490,198.4 L495,197.8 L500,197.3 L505,196.9 L510,196.7 L515,196.6 L520,196.7 L525,196.9 L530,197.2 L535,197.6 L540,198 L545,198.5 L550,199 L555,199.5 L560,200 L565,200.4 L570,200.8 L575,201.2 L580,201.4 L585,201.6 L590,201.7 L595,201.7 L600,201.7"/>
+</svg>
+<figcaption class="label">settled</figcaption>
+</figure>
+</div>
+<ul class="readout" aria-label="What we build">
+<li><a href="#ch1"><span class="mono" aria-hidden="true">01</span> <span class="t">Decision systems</span></a></li>
+<li><a href="#ch2"><span class="mono" aria-hidden="true">02</span> <span class="t">Data pipelines</span></a></li>
+<li><a href="#ch3"><span class="mono" aria-hidden="true">03</span> <span class="t">ML applications</span></a></li>
+<li><a href="#ch4"><span class="mono" aria-hidden="true">04</span> <span class="t">LLM features</span></a></li>
+</ul>
+</div>
 </section>
 
-<!-- ════════════════════ WHERE WE STAND ════════════════════ -->
-<!-- The honest position of a studio with no track record. The one external link
-     in this section is NOT ours — see the attribution rule above the callout,
-     and never restate it as our work, our product or our client project. -->
-<section id="work" data-dot="Where We Stand">
-  <div class="container">
-    <div class="sec-label reveal">Where We Stand</div>
-    <h2 class="sec-h2 reveal">No client case studies.<br /><span class="grad">We're not going to invent any.</span></h2>
-    <p class="sec-p reveal">
-      This studio is new. That is the first thing a stranger should know, and
-      dressing it up would be the fastest way to lose the kind of client we
-      want. So here is what we offer instead of a track record we haven't
-      earned: terms you can hold us to, and work you can inspect while it
-      happens rather than after it's sold.
-    </p>
-
-    <div class="work-card reveal">
-      <div class="work-card-body">
-        <h3>What we put in writing</h3>
-        <p>Every line below is a commitment, not a claim about the past. If we ever can't keep one, it comes off this page.</p>
-        <ul class="rigor-list">
-          <li><b>A written scope before any money moves</b> — deliverable, price, and what "done" means, agreed in advance. If we think AI is the wrong tool for your problem, we say so at this stage and you owe us nothing.</li>
-          <li><b>Your code, your infrastructure, from day one</b> — commits land in your repository and run in your accounts. There is nothing to extract later and no lock-in to negotiate out of.</li>
-          <li><b>Something runnable every week</b> — not a status update. You can execute it, read the tests, and judge for yourself whether it works.</li>
-          <li><b>A pilot you can walk away from</b> — if the first piece of work doesn't convince you, you keep everything produced and the engagement stops there.</li>
-          <li><b>Direct access, no account layer</b> — you talk to the engineer writing the code, in a call, the same day.</li>
-        </ul>
-        <div class="work-links">
-          <a href="#contact" class="btn-primary">Start with a pilot →</a>
-          <a href="work/" class="btn-ghost">How we build things →</a>
-        </div>
-      </div>
-    </div>
-
-    <!-- ATTRIBUTION RULE — read this before editing the callout below.
-         RLAlphaLabs and Porchlamp are NOT Matter Settle projects. Each is a separate project with its own
-         site. This page links to them as examples of careful measurement and says nothing about who made
-         them. Never write "our", "we built", "we made", "we run", "built by", "made by", "the people behind",
-         "sibling", "umbrella", "lab", "personal project" or anything else that implies ownership, authorship
-         or a shared team, and never present their results as a credential of this studio. -->
-    <div class="callout reveal">
-      <strong>Two projects we link to.</strong> Both are public, and both show what careful measurement
-      looks like.
-      <a href="https://rlalphalabs.com" target="_blank" rel="noopener">RLAlphaLabs</a> is AI trading research
-      on Indian equities that, as of October 2026, states openly that no method has cleared its own evidence
-      bar for live trading.
-      <a href="https://pctablet505.github.io/porchlamp/" target="_blank" rel="noopener">Porchlamp</a> ranks
-      open-source projects by how they treat pull requests from outsiders, and publishes its method.
-      They are separate projects with their own sites: not Matter Settle products, not client work, and
-      not a credential we are claiming.
-    </div>
-  </div>
+<section class="band" aria-labelledby="build-h">
+<div class="wrap">
+<div class="sec-head">
+<p class="label"><span class="n">01</span> / What we build</p>
+<h2 id="build-h">Four problems we take on</h2>
+<p>Start from the problem you have. Each line opens the full description.</p>
+</div>
+<ul class="ch-list">
+<li id="ch1"><a class="ch" href="/services/decision-systems/">
+<span class="ch-id label" aria-hidden="true">CH1</span>
+<h3 class="ch-title"><span class="ch-name label">Decision systems<span class="sr-only">:</span></span> The same costly decision, made every day by rule of thumb</h3>
+<p class="ch-desc">Simulation and reinforcement learning for repeated decisions, with an evaluation that compares any new policy against the rule you use today.</p>
+<span class="ch-out mono" aria-hidden="true">simulate, evaluate, decide</span>
+</a></li>
+<li id="ch2"><a class="ch" href="/services/data-pipelines/">
+<span class="ch-id label" aria-hidden="true">CH2</span>
+<h3 class="ch-title"><span class="ch-name label">Data pipelines<span class="sr-only">:</span></span> Your pipeline breaks at night, and someone fixes it by hand</h3>
+<p class="ch-desc">Ingestion, validation and storage built to run unattended: checkpoints, retries, quality gates and a fallback when a source fails.</p>
+<span class="ch-out mono" aria-hidden="true">ingest, validate, store</span>
+</a></li>
+<li id="ch3"><a class="ch" href="/services/ml-applications/">
+<span class="ch-id label" aria-hidden="true">CH3</span>
+<h3 class="ch-title"><span class="ch-name label">ML applications<span class="sr-only">:</span></span> The model works. The system around it does not exist yet</h3>
+<p class="ch-desc">The application around the model: services, storage, deployment, dashboards and monitoring, with the tests that keep it releasable.</p>
+<span class="ch-out mono" aria-hidden="true">serve, deploy, monitor</span>
+</a></li>
+<li id="ch4"><a class="ch" href="/services/llm-features/">
+<span class="ch-id label" aria-hidden="true">CH4</span>
+<h3 class="ch-title"><span class="ch-name label">LLM features<span class="sr-only">:</span></span> An LLM demo that nobody can measure</h3>
+<p class="ch-desc">Retrieval, tool use and agent steps built around one task, with an evaluation set that tells you whether a change made it better or worse.</p>
+<span class="ch-out mono" aria-hidden="true">one task, one eval set</span>
+</a></li>
+</ul>
+</div>
 </section>
 
-<!-- ════════════════════ WHAT WE BUILD ════════════════════ -->
-<!-- Rule for editing this section: capability may be stated broadly and
-     confidently — that is what the studio does. Evidence may not. There is no
-     public artifact behind any of these cards today and the framing sentence
-     says so. Never add a "proof" link to a card unless a stranger can open it
-     and see the thing. -->
-<section id="services" data-dot="What We Build">
-  <div class="container">
-    <div class="sec-label reveal">What We Build</div>
-    <h2 class="sec-h2 reveal">Five things we build.<br /><span class="grad">Ask us to prove any of them.</span></h2>
-    <p class="sec-p reveal">We'll go as deep as you like on any of these — architecture, trade-offs, code on a screen. What we won't do is point at a public artifact as though one existed: this studio is new and there isn't one yet. Judge the reasoning in a call, then judge the pilot.</p>
-
-    <div class="feat-grid">
-
-      <div class="feat-card reveal" data-color="blue">
-        <div class="feat-icon blue-bg">
-          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5"/></svg>
-        </div>
-        <h3>Decision systems, not just models</h3>
-        <p>Reinforcement learning and simulation for problems where a wrong action costs real money — reward design, risk constraints, honest evaluation.</p>
-        <div class="feat-meta">
-          <span class="mono-tag">Reinforcement learning</span>
-          <span class="mono-tag">Backtesting &amp; validation</span>
-        </div>
-      </div>
-
-      <div class="feat-card reveal" data-color="green">
-        <div class="feat-icon green-bg">
-          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><ellipse cx="12" cy="5" rx="9" ry="3"/><path d="M21 12c0 1.66-4 3-9 3s-9-1.34-9-3"/><path d="M3 5v14c0 1.66 4 3 9 3s9-1.34 9-3V5"/></svg>
-        </div>
-        <h3>Your pipeline breaks every third night</h3>
-        <p>Ingestion, validation and storage built to run unattended: checkpointed parallel downloads, quality gates, multi-source fallback.</p>
-        <div class="feat-meta">
-          <span class="mono-tag">Pipeline engineering</span>
-          <span class="mono-tag">Data quality</span>
-        </div>
-      </div>
-
-      <div class="feat-card reveal" data-color="amber">
-        <div class="feat-icon amber-bg">
-          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="2" y="3" width="20" height="14" rx="2"/><path d="M8 21h8M12 17v4"/></svg>
-        </div>
-        <h3>The model works, the system doesn't exist yet</h3>
-        <p>The application around the model: services, storage, deployment, dashboards, and the test discipline that keeps it releasable.</p>
-        <div class="feat-meta">
-          <span class="mono-tag">Full-stack</span>
-          <span class="mono-tag">Deployment &amp; monitoring</span>
-        </div>
-      </div>
-
-      <div class="feat-card reveal" data-color="cyan">
-        <div class="feat-icon cyan-bg">
-          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/><path d="M8 9h8M8 13h5"/></svg>
-        </div>
-        <h3>LLM features that do one job well</h3>
-        <p>Retrieval, tool use and agent workflows built around one specific task, with an evaluation set so you can tell whether a change made it better or worse.</p>
-        <div class="feat-meta">
-          <span class="mono-tag">Retrieval</span>
-          <span class="mono-tag">Tool use &amp; agents</span>
-        </div>
-      </div>
-
-      <!-- TODO(owner): decide whether to keep this card at all. It is worded
-           deliberately generically — no "computer vision", no "quantization /
-           export". A very narrow specialty plus a very small team makes
-           individuals identifiable, which is the one thing this site must
-           never do. Do not sharpen this copy. -->
-      <div class="feat-card reveal" data-color="green">
-        <div class="feat-icon green-bg">
-          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="4" y="4" width="16" height="16" rx="2"/><rect x="9" y="9" width="6" height="6"/><path d="M9 2v2M15 2v2M9 20v2M15 20v2M2 9h2M2 15h2M20 9h2M20 15h2"/></svg>
-        </div>
-        <h3>Models that have to run where the data is</h3>
-        <p>Making a model fit and run on constrained hardware instead of shipping everything to a GPU server — smaller models, measured latency and memory budgets, honest accuracy trade-offs.</p>
-        <div class="feat-meta">
-          <span class="mono-tag">Constrained hardware</span>
-          <span class="mono-tag">Latency &amp; memory budgets</span>
-        </div>
-      </div>
-
-    </div>
-  </div>
+<section class="band band--surface" aria-labelledby="pilot-h">
+<div class="wrap">
+<div class="sec-head">
+<p class="label"><span class="n">02</span> / How a pilot works</p>
+<h2 id="pilot-h">Start small, in writing</h2>
+<p>A pilot is the first small piece of real work. Its scope and price are agreed in writing before it starts.</p>
+</div>
+<ol class="steps">
+<li><span class="label">Step 01</span><h3>Scope it</h3><p>We agree the deliverable and what &ldquo;done&rdquo; means. If AI is the wrong tool, we say so here.</p></li>
+<li><span class="label">Step 02</span><h3>Run a paid pilot</h3><p>One small deliverable, at a price set before it starts.</p></li>
+<li><span class="label">Step 03</span><h3>Build in the open</h3><p>You run each week's version yourself.</p></li>
+<li><span class="label">Step 04</span><h3>Ship, then support</h3><p>Deployment and monitoring: the half of the work that keeps a system right.</p></li>
+</ol>
+<p class="more"><a href="/pilot/">What a pilot contains</a></p>
+</div>
 </section>
 
-<!-- ════════════════════ HOW WE WORK ════════════════════ -->
-<!-- Deliberately short. Promises are cheap and every agency makes the same
-     ones, so this is a scannable strip, not paragraphs. Everything here must
-     be a term the studio can honour on day one. -->
-<section id="process" data-dot="How We Work">
-  <div class="container">
-    <div class="sec-label reveal">How We Work</div>
-    <h2 class="sec-h2 reveal">Four steps.<br /><span class="grad">Judge the process.</span></h2>
-    <p class="sec-p reveal">We're a new studio, so we have no decade of client history to wave at. Here is exactly how an engagement runs instead.</p>
-
-    <div class="step-strip reveal">
-      <div class="step">
-        <span class="step-n">01</span>
-        <b>Scope honestly</b>
-        <span>If AI is the wrong tool, we say so.</span>
-      </div>
-      <div class="step">
-        <span class="step-n">02</span>
-        <b>Small paid pilot</b>
-        <span>Fixed scope, fixed price, working software early.</span>
-      </div>
-      <div class="step">
-        <span class="step-n">03</span>
-        <b>Build in the open</b>
-        <span>Weekly progress you can see and run.</span>
-      </div>
-      <div class="step">
-        <span class="step-n">04</span>
-        <b>Ship, then support</b>
-        <span>Monitoring, retraining, on-call — the boring half.</span>
-      </div>
-    </div>
-
-    <div class="how-cols">
-      <div class="how-col reveal">
-        <h3>What an engagement looks like</h3>
-        <ul class="tight-list">
-          <li><b>Pilot</b> — fixed price, fixed scope, one clear deliverable.</li>
-          <li><b>Ongoing build</b> — project fee or monthly retainer.</li>
-          <li><b>Written scope first</b> — you know the cost before you commit.</li>
-        </ul>
-        <!-- TODO(owner): confirm "fixed price, fixed scope" for pilots, and add a
-             typical pilot duration here if you're willing to commit to one. -->
-        <p class="fine">No price list: scope varies too much for a number to mean anything before we've talked.</p>
-      </div>
-      <div class="how-col reveal">
-        <h3>What you get either way</h3>
-        <ul class="tight-list">
-          <li><b>Ownership</b> — your repo, your cloud accounts, from the first commit.</li>
-          <li><b>Direct access</b> — you talk to the engineer doing the work.</li>
-          <li><b>No lock-in</b> — walk away after the pilot with everything.</li>
-        </ul>
-        <!-- Deliberately generic. Do NOT add a company name here under any
-             circumstance: a named employer plus a small team identifies people. -->
-        <p class="fine">Engineers who have worked on machine learning in demanding production environments. New as a studio, not new to shipping ML.</p>
-      </div>
-    </div>
-  </div>
+<section class="band" aria-labelledby="terms-h">
+<div class="wrap">
+<div class="sec-head">
+<p class="label"><span class="n">03</span> / The terms</p>
+<h2 id="terms-h">The terms we start from</h2>
+<p>They describe how we intend to work with you. They are not claims about the past.</p>
+</div>
+<ol class="terms">
+<li><span class="label" aria-hidden="true">T1</span> <b>Fixed pilot</b><p>Fixed price and fixed scope, agreed in writing before anything starts.</p></li>
+<li><span class="label" aria-hidden="true">T2</span> <b>Your code</b><p>Yours from the first commit, in your repository and your accounts.</p></li>
+<li><span class="label" aria-hidden="true">T3</span> <b>Weekly</b><p>Something you can run every week, not a status deck.</p></li>
+<li><span class="label" aria-hidden="true">T4</span> <b>Walk away</b><p>Stop after the pilot and keep everything it produced.</p></li>
+<li><span class="label" aria-hidden="true">T5</span> <b>Direct access</b><p>You talk to the engineer doing the work, not an account manager.</p></li>
+</ol>
+<p class="more"><a href="/work/">How we work, in detail</a></p>
+</div>
 </section>
 
-<!-- ════════════════════ CONTACT ════════════════════ -->
-<section id="contact" data-dot="Contact">
-  <div class="container">
-    <div class="contact-wrap">
-      <div class="contact-left reveal">
-        <div class="sec-label">Get In Touch</div>
-        <h2 class="sec-h2">Start with a<br /><span class="grad">conversation.</span></h2>
-        <p>Tell us what you're building. A sentence or two is plenty — we'll reply directly, and we'll tell you honestly if it's outside what we do.</p>
-        <!-- TODO(owner): confirm the city, and add a legal entity name here once
-             one exists. The timezone claim must match reality — it is the first
-             question most procurement conversations ask. -->
-        <ul class="contact-facts">
-          <li><b>Where we are:</b> India · IST (UTC+5:30)</li>
-          <li><b>Overlap:</b> full European working day, US mornings</li>
-          <li><b>What happens next:</b> a short call, no pitch deck</li>
-        </ul>
-      </div>
-      <div class="contact-right reveal">
-        <form class="cform" id="contactForm">
-          <div class="cform-group">
-            <label for="name">Name</label>
-            <input type="text" id="name" name="name" placeholder="Your name" required />
-          </div>
-          <div class="cform-group">
-            <label for="email">Email</label>
-            <input type="email" id="email" name="email" placeholder="you@company.com" required />
-          </div>
-          <div class="cform-group">
-            <label for="message">What are you building?</label>
-            <textarea id="message" name="message" rows="4" placeholder="A sentence or two is plenty."></textarea>
-          </div>
-          <button type="submit" class="btn-primary full">Open in my email app</button>
-          <!-- Deliberate: this site makes no reply-time promise anywhere. Add one
-               only if the owner will genuinely keep it, every single time. -->
-          <p class="cform-promise">This opens your own email app with the message ready to send.</p>
-        </form>
-
-        <!-- Fallback panel: shown after submit and stays visible alongside the
-             form, because a mailto: link silently does nothing on webmail and
-             on locked-down corporate machines. The text is copyable so a failed
-             hand-off is always recoverable. -->
-        <div class="cform-fallback" id="formFallback" role="status" aria-live="polite" hidden>
-          <b>If your email app didn't open</b>
-          <p>Copy the message below and send it to <!--email_off--><a href="mailto:settleyourmatter@gmail.com">settleyourmatter@gmail.com</a><!--/email_off-->.</p>
-          <textarea id="fallbackText" rows="6" readonly aria-label="Your message, ready to copy"></textarea>
-          <button type="button" class="btn-ghost" id="copyBtn">Copy message</button>
-        </div>
-
-        <p class="contact-fallback">
-          Prefer plain email? <!--email_off--><a href="mailto:settleyourmatter@gmail.com">settleyourmatter@gmail.com</a><!--/email_off--> — same inbox either way.
-          <!-- This address appears twice on this page, once in privacy/index.html
-               and once in js/main.js. Change all four together. -->
-        </p>
-        <p class="contact-privacy">
-          The form never sends anything by itself — it hands the text to your email app. Nothing is stored on any Matter Settle server. See our <a href="privacy/">privacy notice</a>.
-        </p>
-      </div>
-    </div>
-  </div>
+<section class="band band--surface" aria-labelledby="read-h">
+<div class="wrap">
+<div class="sec-head">
+<p class="label"><span class="n">04</span> / Read it before you call</p>
+<h2 id="read-h">Read how we think before you talk to us</h2>
+<p>A sample scope and two guides you can read without contacting anyone.</p>
+</div>
+<ul class="ch-list">
+<li><a class="ch" href="/pilot/#sample-scope">
+<span class="ch-id label" aria-hidden="true">DOC1</span>
+<h3 class="ch-title"><span class="ch-name label">Sample pilot scope<span class="sr-only">:</span></span> A pilot scope, with notes on every line</h3>
+<p class="ch-desc">A full scope for an invented buyer, marked as an example, with a note on why each line is there.</p>
+<span class="ch-out mono" aria-hidden="true">example only</span>
+</a></li>
+<li><a class="ch" href="/guides/notebook-to-service/">
+<span class="ch-id label" aria-hidden="true">DOC2</span>
+<h3 class="ch-title"><span class="ch-name label">Guide<span class="sr-only">:</span></span> From notebook to service: a production-readiness checklist</h3>
+<p class="ch-desc">The checks a model should pass before it serves real users.</p>
+<span class="ch-out mono" aria-hidden="true">checklist</span>
+</a></li>
+<li><a class="ch" href="/guides/questions-before-you-pay/">
+<span class="ch-id label" aria-hidden="true">DOC3</span>
+<h3 class="ch-title"><span class="ch-name label">Guide<span class="sr-only">:</span></span> Ten questions to ask any AI studio before you pay, including us</h3>
+<p class="ch-desc">What to ask, and what a useful answer looks like.</p>
+<span class="ch-out mono" aria-hidden="true">question list</span>
+</a></li>
+</ul>
+</div>
 </section>
 
-<!-- ════════════════════ FOOTER ════════════════════ -->
-<footer>
-  <div class="container">
-    <div class="footer-top">
-      <div class="footer-brand">
-        <a href="#hero" class="nav-logo">
-          <svg class="logo-mark" viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
-            <rect x="2.5" y="2.5" width="19" height="19" rx="5.5" />
-            <path d="M6.5 17h11" />
-            <path d="M8.5 17v-4.5l2.6 2.4 2.2-6 2.2 8.1" />
-          </svg>
-          Matter Settle
-        </a>
-        <p>A small studio building end-to-end AI systems.<br />
-        India · IST (UTC+5:30)</p>
-      </div>
-      <div class="footer-nav">
-        <div class="fnav-col">
-          <b>Studio</b>
-          <a href="#hero">Home</a>
-          <a href="#work">Where We Stand</a>
-          <a href="#services">What We Build</a>
-          <a href="#process">How We Work</a>
-        </div>
-        <div class="fnav-col">
-          <b>Elsewhere</b>
-          <a href="work/">How We Build</a>
-          <a href="https://rlalphalabs.com" target="_blank" rel="noopener">RLAlphaLabs ↗</a>
-          <a href="https://pctablet505.github.io/porchlamp/" target="_blank" rel="noopener">Porchlamp ↗</a>
-        </div>
-        <div class="fnav-col">
-          <b>Legal</b>
-          <a href="privacy/">Privacy</a>
-        </div>
-      </div>
-    </div>
-    <div class="footer-bottom">
-      <p>© 2026 Matter Settle. A small studio building end-to-end AI systems.</p>
-      <p class="footer-disc">RLAlphaLabs and Porchlamp are separate projects we link to as examples of careful measurement, not Matter Settle products and not client work. We're a new studio and we don't claim work we haven't done.</p>
-    </div>
-  </div>
+<section class="band" aria-label="When we say no, and where we are">
+<div class="wrap split">
+<div>
+<div class="sec-head">
+<p class="label"><span class="n">05</span> / When we say no</p>
+<h2>When AI is the wrong tool</h2>
+</div>
+<div class="callout">
+<p>We will tell you. If a rule, a database query or a spreadsheet would do the job, you hear it at the scoping stage, and you owe us nothing.</p>
+<p>We also say no when there is no data to learn from, when nobody can say what a good result looks like, or when the work is outside what we do.</p>
+</div>
+</div>
+<div>
+<div class="sec-head">
+<p class="label"><span class="n">06</span> / Where we are</p>
+<h2>India, with European and US-morning overlap</h2>
+</div>
+<dl class="readings">
+<div><dt class="label">Location</dt><dd>India</dd></div>
+<div><dt class="label">Time zone</dt><dd>IST, India Standard Time</dd></div>
+<div><dt class="label">Overlap</dt><dd>European working hours, and US mornings</dd></div>
+</dl>
+</div>
+</div>
+</section>
+
+<section class="band band--surface" aria-labelledby="faq-h">
+<div class="wrap split">
+<div class="sec-head">
+<p class="label"><span class="n">07</span> / Questions</p>
+<h2 id="faq-h">Four short questions</h2>
+<p>The longer list is on the <a href="/faq/">questions buyers ask</a> page.</p>
+</div>
+<div class="qa">
+<details><summary>How much does a pilot cost, and how long does it take?</summary><p>Both depend on the problem, so both are set in the written scope before anything starts. You know the price before you commit.</p></details>
+<details><summary>Who owns the code?</summary><p>You do, from the first commit. It lives in your repository and runs in your accounts.</p></details>
+<details><summary>Will we talk to the person doing the work?</summary><p>Yes. You talk to the engineer writing the code, not an account manager.</p></details>
+<details><summary>What do you need from us to start?</summary><p>Two or three sentences about what you are building. If it fits, a short call, then a written scope.</p></details>
+</div>
+</div>
+</section>
+
+<section class="band" aria-labelledby="contact-h">
+<div class="wrap split">
+<div class="sec-head">
+<p class="label"><span class="n">08</span> / Contact</p>
+<h2 id="contact-h">Start a conversation</h2>
+<p>Tell us what you are building in two or three sentences. An engineer replies. If you hear nothing, write again.</p>
+</div>
+<div class="address-block">
+<p class="label">Email</p>
+<p class="address"><!--email_off-->settleyourmatter@gmail.com<!--/email_off--></p>
+<div class="btn-row">
+<!--email_off--><a href="mailto:settleyourmatter@gmail.com?subject=Enquiry%3A%20&amp;body=What%20you%20are%20building%2C%20in%20one%20or%20two%20sentences%3A%0D%0A%0D%0AWhat%20exists%20today%20%28a%20notebook%2C%20a%20prototype%2C%20a%20running%20system%2C%20nothing%20yet%29%3A%0D%0A%0D%0AWhat%20%22working%22%20would%20mean%20for%20you%3A%0D%0A%0D%0AYour%20time%20zone%2C%20and%20a%20good%20time%20for%20a%20short%20call%3A%0D%0A%0D%0AHow%20did%20you%20find%20us%3F%20%28optional%29%3A%0D%0A" class="btn">Open in my email app</a><!--/email_off-->
+<button class="btn btn--ghost js-only" type="button" data-copy-address data-status="home-copy-status">Copy address</button>
+</div>
+<p class="status" id="home-copy-status" role="status"></p>
+<p class="note more"><a href="/contact/">Draft your message on the contact page</a></p>
+</div>
+</div>
+</section>
+
+</main>
+<footer class="site-footer">
+<div class="wrap">
+<div class="foot-grid">
+<div>
+<a class="brand" href="/"><svg viewBox="0 0 32 32" width="32" height="32" aria-hidden="true" focusable="false"><rect class="mark-bg" width="32" height="32"/><path class="mark-line" fill="none" stroke-width="2.5" stroke-linejoin="round" stroke-linecap="round" d="M3,22 L8,22 L8,7 L10,17.4 L12,26.3 L14,26.3 L16,22.4 L18,19.6 L20,20.4 L22,22.3 L24,23 L26,22.4 L29,22"/></svg><span class="brand-text"><span class="brand-name">Matter Settle</span><span class="brand-sub">AI engineering studio</span></span></a>
+<p class="foot-disamb">Matter Settle is an AI engineering studio, not a law firm or a legal-settlement service.</p>
+</div>
+<nav aria-label="Footer">
+<ul class="foot-links">
+<li><a href="/about/#no-case-studies">What a new studio can show</a></li>
+<li><a href="/faq/">FAQ</a></li>
+<li><a href="/elsewhere/">Elsewhere</a></li>
+<li><a href="/privacy/">Privacy</a></li>
+<li><a href="/feed.xml">Guides feed</a></li>
+</ul>
+</nav>
+<div class="foot-meta">
+<p class="label">Email</p>
+<p><!--email_off--><a href="mailto:settleyourmatter@gmail.com">settleyourmatter@gmail.com</a><!--/email_off--></p>
+<p>AI engineering studio, India (IST)</p>
+</div>
+</div>
+<p class="foot-small">&copy; 2026 Matter Settle</p>
+</div>
 </footer>
-
-<button id="backTop" aria-label="Back to top" title="Back to top">↑</button>
-
-<script src="js/main.js"></script>
 </body>
 </html>
