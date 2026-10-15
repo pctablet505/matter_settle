@@ -17,13 +17,14 @@ This guide assumes no prior web-dev experience.
    actually works.
 2. **Point the apex at GitHub Pages** (see "DNS records" below). Until then the
    site is unreachable and link previews can't load the preview image.
-3. **Keep the RLAlphaLabs line exactly where it is.** `rlalphalabs.com`
-   is a separate personal project, not a Matter Settle product and not client
-   work. This site references it only as an example of an engineering standard,
-   and says so in plain words on the homepage, the How We Build page and every
-   footer. Do not let anyone "tighten" that into ownership language — claiming
-   another party's project is the single fastest way to lose a careful reader,
-   and it is the one thing every reviewer of this site flagged.
+3. **Keep the wording about RLAlphaLabs and Porchlamp exactly as it is.** Each is a
+   separate project with its own site, not a Matter Settle product and not client
+   work. This site links them only as examples of careful measurement, says so in
+   plain words on the homepage, the How We Build page and every footer, and says
+   nothing about who made them. Do not let anyone "tighten" that into ownership or
+   team language (our, built by, the people behind, lab). A claim of authorship that
+   a careful reader can disprove is the fastest way to lose them, and it is the one
+   thing every reviewer of this site flagged.
 4. **Confirm the location line.** The footer and contact section say
    "India · IST (UTC+5:30)". Change it if that's wrong, and add a city and a
    legal entity name when you have one.
