@@ -1,0 +1,38 @@
+# Matter Settle
+
+> Matter Settle is an AI engineering studio based in India. A small team of engineers designs, builds and runs production AI systems end to end: data pipelines, models, the application around them, deployment and monitoring. It is a new studio with no public client case studies, and it says so. Matter Settle is not a legal, claims or settlement service.
+
+## Pages
+
+- [Home](https://mattersettle.com/): what the studio builds, who it is for, the terms of an engagement, how to get in touch.
+- [How we build](https://mattersettle.com/work/): the engineering standard the studio works to and the terms it puts in writing.
+- [Privacy](https://mattersettle.com/privacy/): what the site does with data. No analytics, no tracking, no third-party requests.
+
+## What the studio builds
+
+- Decision systems: reinforcement learning and simulation for problems where a wrong action costs real money, including reward design, risk constraints and honest evaluation.
+- Data pipelines that run unattended: ingestion, validation and storage with quality gates and multi-source fallback.
+- The application around a model: services, storage, deployment, dashboards and the tests that keep it releasable.
+- LLM features built around one specific task, with an evaluation set so a change can be judged better or worse.
+- Models that must run on constrained hardware: smaller models with measured latency and memory budgets.
+
+## Terms of an engagement (as stated on the site)
+
+- A written scope before any money moves: deliverable, price and what "done" means. If AI is the wrong tool, the studio says so.
+- A fixed-price, fixed-scope paid pilot.
+- Your code in your repository and your cloud accounts from the first commit.
+- Something runnable every week, not a status deck.
+- A pilot you can walk away from: you keep everything produced.
+- Direct access to the engineer doing the work.
+
+## Contact
+
+- Email: settleyourmatter@gmail.com
+- Location: India, IST (UTC+5:30). Working hours overlap a full European working day and US mornings.
+
+## Linked projects
+
+Matter Settle links to two public projects as examples of careful measurement. They are separate projects with their own sites: not Matter Settle products, not client work, and not a credential.
+
+- [RLAlphaLabs](https://rlalphalabs.com/): AI trading research on Indian equities.
+- [Porchlamp](https://pctablet505.github.io/porchlamp/): ranks open-source projects by how they treat pull requests from outsiders.

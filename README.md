@@ -46,6 +46,9 @@ mattersettle-site/
 ├── assets/favicon.svg               the logo mark, also used as the browser-tab icon
 ├── assets/og-cover.png              the image shown when someone pastes a link in Slack/LinkedIn
 ├── assets/fonts/*.woff2             self-hosted fonts (no third-party font CDN)
+├── robots.txt                       tells crawlers they may read everything and where the sitemap is
+├── sitemap.xml                      every public page and the date it last changed (update <lastmod> when you edit a page)
+├── llms.txt                         a plain-text summary of the studio for AI assistants (keep it identical in meaning to the pages)
 ├── CNAME                            tells GitHub Pages the custom domain (mattersettle.com)
 ├── .nojekyll                        "serve these files as-is, don't run Jekyll"
 ├── .gitignore                       keeps PLAN/ out of the repo (and off the website)

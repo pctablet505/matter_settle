@@ -5,6 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
   <title>Privacy — Matter Settle</title>
   <meta name="description" content="Matter Settle's privacy notice: no backend, no analytics, no third-party requests. The contact form hands your message to your own email app." />
+  <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1" />
   <meta property="og:site_name" content="Matter Settle" />
   <meta property="og:title" content="Privacy — Matter Settle" />
   <meta property="og:description" content="No backend, no analytics, no third-party requests. The contact form hands your message to your own email app." />
@@ -31,6 +32,59 @@
   <link rel="preload" href="/assets/fonts/inter-var.woff2" as="font" type="font/woff2" crossorigin />
   <link rel="stylesheet" href="../css/style.css" />
   <noscript><style>.reveal{opacity:1!important;transform:none!important}</style></noscript>
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@graph": [
+      {
+        "@type": "Organization",
+        "@id": "https://mattersettle.com/#organization",
+        "name": "Matter Settle",
+        "url": "https://mattersettle.com/"
+      },
+      {
+        "@type": "WebSite",
+        "@id": "https://mattersettle.com/#website",
+        "url": "https://mattersettle.com/",
+        "name": "Matter Settle"
+      },
+      {
+        "@type": "WebPage",
+        "@id": "https://mattersettle.com/privacy/#webpage",
+        "url": "https://mattersettle.com/privacy/",
+        "name": "Privacy — Matter Settle",
+        "description": "Matter Settle's privacy notice: no backend, no analytics, no third-party requests. The contact form hands your message to your own email app.",
+        "isPartOf": {
+          "@id": "https://mattersettle.com/#website"
+        },
+        "about": {
+          "@id": "https://mattersettle.com/#organization"
+        },
+        "breadcrumb": {
+          "@id": "https://mattersettle.com/privacy/#breadcrumb"
+        }
+      },
+      {
+        "@type": "BreadcrumbList",
+        "@id": "https://mattersettle.com/privacy/#breadcrumb",
+        "itemListElement": [
+          {
+            "@type": "ListItem",
+            "position": 1,
+            "name": "Home",
+            "item": "https://mattersettle.com/"
+          },
+          {
+            "@type": "ListItem",
+            "position": 2,
+            "name": "Privacy",
+            "item": "https://mattersettle.com/privacy/"
+          }
+        ]
+      }
+    ]
+  }
+  </script>
 </head>
 <body>
 
@@ -94,7 +148,7 @@
 
       <p>If you email us, we keep your message in our inbox so we can reply to it. If you'd rather we delete it, ask and we will.</p>
 
-      <p>Questions about this notice: <a href="mailto:settleyourmatter@gmail.com">settleyourmatter@gmail.com</a>.
+      <p>Questions about this notice: <!--email_off--><a href="mailto:settleyourmatter@gmail.com">settleyourmatter@gmail.com</a><!--/email_off-->.
       <!-- Keep this address identical to the one in index.html and js/main.js. --></p>
 
       <div class="callout warn">
